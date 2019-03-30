@@ -8,7 +8,7 @@
       <ObjectId>24618</ObjectId>
       <StateNumber>591</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>924</IntrospectionStateNumber>
+      <IntrospectionStateNumber>937</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </database>
@@ -110,7 +110,7 @@
       <Comment>standard public schema</Comment>
       <StateNumber>360</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>925</IntrospectionStateNumber>
+      <IntrospectionStateNumber>938</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -271,14 +271,14 @@
       <Primary>1</Primary>
     </key>
     <foreign-key id="45" parent="27" name="accepted_offers_user_id_fkey">
-      <ObjectId>25358</ObjectId>
-      <StateNumber>845</StateNumber>
+      <ObjectId>25465</ObjectId>
+      <StateNumber>933</StateNumber>
       <ColNames>user_id</ColNames>
       <RefTableId>25298</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>users</RefTableName>
       <RefKeyName>users_pkey</RefKeyName>
-      <RefColNames>id</RefColNames>
+      <RefColNames>uid</RefColNames>
     </foreign-key>
     <foreign-key id="46" parent="27" name="accepted_offers_offer_id_fkey">
       <ObjectId>25363</ObjectId>
@@ -554,14 +554,14 @@
       <Primary>1</Primary>
     </key>
     <foreign-key id="86" parent="32" name="offers_owner_id_fkey">
-      <ObjectId>25348</ObjectId>
-      <StateNumber>843</StateNumber>
+      <ObjectId>25470</ObjectId>
+      <StateNumber>933</StateNumber>
       <ColNames>owner_id</ColNames>
       <RefTableId>25298</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>users</RefTableName>
       <RefKeyName>users_pkey</RefKeyName>
-      <RefColNames>id</RefColNames>
+      <RefColNames>uid</RefColNames>
     </foreign-key>
     <foreign-key id="87" parent="32" name="offers_kategory_id_fkey">
       <ObjectId>25353</ObjectId>
@@ -614,24 +614,24 @@
       <TypeId>23</TypeId>
     </column>
     <foreign-key id="94" parent="33" name="rating_history_rated_user_fkey">
-      <ObjectId>25398</ObjectId>
-      <StateNumber>853</StateNumber>
+      <ObjectId>25460</ObjectId>
+      <StateNumber>933</StateNumber>
       <ColNames>rated_user</ColNames>
       <RefTableId>25298</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>users</RefTableName>
       <RefKeyName>users_pkey</RefKeyName>
-      <RefColNames>id</RefColNames>
+      <RefColNames>uid</RefColNames>
     </foreign-key>
     <foreign-key id="95" parent="33" name="rating_history_rated_by_fkey">
-      <ObjectId>25403</ObjectId>
-      <StateNumber>854</StateNumber>
+      <ObjectId>25455</ObjectId>
+      <StateNumber>933</StateNumber>
       <ColNames>rated_by</ColNames>
       <RefTableId>25298</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>users</RefTableName>
       <RefKeyName>users_pkey</RefKeyName>
-      <RefColNames>id</RefColNames>
+      <RefColNames>uid</RefColNames>
     </foreign-key>
     <column id="96" parent="34" name="version">
       <Position>1</Position>
@@ -721,11 +721,11 @@
       <RefKeyName>cities_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="109" parent="37" name="id">
+    <column id="109" parent="37" name="uid">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>836</StateNumber>
+      <StateNumber>936</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="110" parent="37" name="full_name">
@@ -765,9 +765,9 @@
       <TypeId>25</TypeId>
     </column>
     <index id="116" parent="37" name="users_pkey">
-      <ObjectId>25304</ObjectId>
-      <StateNumber>836</StateNumber>
-      <ColNames>id</ColNames>
+      <ObjectId>25453</ObjectId>
+      <StateNumber>933</StateNumber>
+      <ColNames>uid</ColNames>
       <Unique>1</Unique>
     </index>
     <index id="117" parent="37" name="users_email_key">
@@ -777,9 +777,9 @@
       <Unique>1</Unique>
     </index>
     <key id="118" parent="37" name="users_pkey">
-      <ObjectId>25305</ObjectId>
-      <StateNumber>836</StateNumber>
-      <ColNames>id</ColNames>
+      <ObjectId>25454</ObjectId>
+      <StateNumber>933</StateNumber>
+      <ColNames>uid</ColNames>
       <UnderlyingIndexName>users_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>

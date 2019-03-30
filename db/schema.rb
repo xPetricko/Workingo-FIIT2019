@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_30_153512) do
+ActiveRecord::Schema.define(version: 2019_03_30_164842) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(version: 2019_03_30_153512) do
     t.integer "city_id"
   end
 
-  create_table "users", id: :integer, default: nil, force: :cascade do |t|
+  create_table "users", primary_key: "uid", id: :integer, default: nil, force: :cascade do |t|
     t.string "full_name"
     t.string "email"
     t.string "gender"
@@ -79,15 +79,15 @@ ActiveRecord::Schema.define(version: 2019_03_30_153512) do
   end
 
   add_foreign_key "accepted_offers", "offers", name: "accepted_offers_offer_id_fkey"
-  add_foreign_key "accepted_offers", "users", name: "accepted_offers_user_id_fkey"
+  add_foreign_key "accepted_offers", "users", primary_key: "uid", name: "accepted_offers_user_id_fkey"
   add_foreign_key "adresses", "cities", name: "adresses_city_id_fkey"
   add_foreign_key "adresses", "states", name: "adresses_state_id_fkey"
   add_foreign_key "adresses", "streets", name: "adresses_street_id_fkey"
   add_foreign_key "cities", "states", name: "cities_state_id_fkey"
   add_foreign_key "offers", "adresses", name: "offers_adress_id_fkey"
   add_foreign_key "offers", "categories", column: "kategory_id", name: "offers_kategory_id_fkey"
-  add_foreign_key "offers", "users", column: "owner_id", name: "offers_owner_id_fkey"
-  add_foreign_key "rating_history", "users", column: "rated_by", name: "rating_history_rated_by_fkey"
-  add_foreign_key "rating_history", "users", column: "rated_user", name: "rating_history_rated_user_fkey"
+  add_foreign_key "offers", "users", column: "owner_id", primary_key: "uid", name: "offers_owner_id_fkey"
+  add_foreign_key "rating_history", "users", column: "rated_by", primary_key: "uid", name: "rating_history_rated_by_fkey"
+  add_foreign_key "rating_history", "users", column: "rated_user", primary_key: "uid", name: "rating_history_rated_user_fkey"
   add_foreign_key "streets", "cities", name: "streets_city_id_fkey"
 end
