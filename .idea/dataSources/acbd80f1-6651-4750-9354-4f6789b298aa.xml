@@ -8,7 +8,7 @@
       <ObjectId>24618</ObjectId>
       <StateNumber>591</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>745</IntrospectionStateNumber>
+      <IntrospectionStateNumber>924</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </database>
@@ -110,7 +110,7 @@
       <Comment>standard public schema</Comment>
       <StateNumber>360</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>746</IntrospectionStateNumber>
+      <IntrospectionStateNumber>925</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -170,123 +170,123 @@
       <SchemaName>pg_catalog</SchemaName>
       <SchemaId>11</SchemaId>
     </extension>
-    <table id="27" parent="19" name="accepted_offer">
-      <ObjectId>24922</ObjectId>
+    <table id="27" parent="19" name="accepted_offers">
+      <ObjectId>25311</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>733</StateNumber>
+      <StateNumber>845</StateNumber>
     </table>
-    <table id="28" parent="19" name="address">
-      <ObjectId>24930</ObjectId>
+    <table id="28" parent="19" name="adresses">
+      <ObjectId>25319</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>744</StateNumber>
+      <StateNumber>849</StateNumber>
     </table>
     <table id="29" parent="19" name="ar_internal_metadata">
-      <ObjectId>25077</ObjectId>
+      <ObjectId>25417</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>729</StateNumber>
+      <StateNumber>865</StateNumber>
     </table>
-    <table id="30" parent="19" name="category">
-      <ObjectId>24893</ObjectId>
+    <table id="30" parent="19" name="categories">
+      <ObjectId>25282</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>736</StateNumber>
+      <StateNumber>870</StateNumber>
     </table>
-    <table id="31" parent="19" name="city">
-      <ObjectId>24943</ObjectId>
+    <table id="31" parent="19" name="cities">
+      <ObjectId>25332</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>737</StateNumber>
+      <StateNumber>847</StateNumber>
     </table>
-    <table id="32" parent="19" name="offer">
-      <ObjectId>24901</ObjectId>
+    <table id="32" parent="19" name="offers">
+      <ObjectId>25290</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>738</StateNumber>
+      <StateNumber>843</StateNumber>
     </table>
     <table id="33" parent="19" name="rating_history">
-      <ObjectId>24919</ObjectId>
+      <ObjectId>25308</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>695</StateNumber>
+      <StateNumber>853</StateNumber>
     </table>
     <table id="34" parent="19" name="schema_migrations">
-      <ObjectId>25069</ObjectId>
+      <ObjectId>25409</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>728</StateNumber>
+      <StateNumber>864</StateNumber>
     </table>
-    <table id="35" parent="19" name="state">
-      <ObjectId>24935</ObjectId>
+    <table id="35" parent="19" name="states">
+      <ObjectId>25324</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>739</StateNumber>
+      <StateNumber>848</StateNumber>
     </table>
-    <table id="36" parent="19" name="street">
-      <ObjectId>24951</ObjectId>
+    <table id="36" parent="19" name="streets">
+      <ObjectId>25340</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>740</StateNumber>
+      <StateNumber>847</StateNumber>
     </table>
-    <table id="37" parent="19" name="user">
-      <ObjectId>24909</ObjectId>
+    <table id="37" parent="19" name="users">
+      <ObjectId>25298</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>741</StateNumber>
+      <StateNumber>904</StateNumber>
     </table>
     <column id="38" parent="27" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>680</StateNumber>
+      <StateNumber>838</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="39" parent="27" name="label">
       <Position>2</Position>
       <DataType>varchar|0s</DataType>
-      <StateNumber>680</StateNumber>
+      <StateNumber>838</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="40" parent="27" name="user_id">
       <Position>3</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>680</StateNumber>
+      <StateNumber>838</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="41" parent="27" name="offer_id">
       <Position>4</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>680</StateNumber>
+      <StateNumber>838</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="42" parent="27" name="accepted_at">
       <Position>5</Position>
       <DataType>date|0s</DataType>
-      <StateNumber>680</StateNumber>
+      <StateNumber>838</StateNumber>
       <TypeId>1082</TypeId>
     </column>
     <index id="43" parent="27" name="accepted_offers_pkey">
-      <ObjectId>24928</ObjectId>
-      <StateNumber>680</StateNumber>
+      <ObjectId>25317</ObjectId>
+      <StateNumber>838</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
     <key id="44" parent="27" name="accepted_offers_pkey">
-      <ObjectId>24929</ObjectId>
-      <StateNumber>680</StateNumber>
+      <ObjectId>25318</ObjectId>
+      <StateNumber>838</StateNumber>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>accepted_offers_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
     <foreign-key id="45" parent="27" name="accepted_offers_user_id_fkey">
-      <ObjectId>24969</ObjectId>
-      <StateNumber>687</StateNumber>
+      <ObjectId>25358</ObjectId>
+      <StateNumber>845</StateNumber>
       <ColNames>user_id</ColNames>
-      <RefTableId>24909</RefTableId>
+      <RefTableId>25298</RefTableId>
       <RefColPositions>1</RefColPositions>
-      <RefTableName>user</RefTableName>
+      <RefTableName>users</RefTableName>
       <RefKeyName>users_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
     <foreign-key id="46" parent="27" name="accepted_offers_offer_id_fkey">
-      <ObjectId>24974</ObjectId>
-      <StateNumber>688</StateNumber>
+      <ObjectId>25363</ObjectId>
+      <StateNumber>846</StateNumber>
       <ColNames>offer_id</ColNames>
-      <RefTableId>24901</RefTableId>
+      <RefTableId>25290</RefTableId>
       <RefColPositions>1</RefColPositions>
-      <RefTableName>offer</RefTableName>
+      <RefTableName>offers</RefTableName>
       <RefKeyName>offers_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
@@ -294,73 +294,73 @@
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>681</StateNumber>
+      <StateNumber>839</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="48" parent="28" name="state_id">
       <Position>2</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>681</StateNumber>
+      <StateNumber>839</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="49" parent="28" name="city_id">
       <Position>3</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>681</StateNumber>
+      <StateNumber>839</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="50" parent="28" name="street_id">
       <Position>4</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>681</StateNumber>
+      <StateNumber>839</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="51" parent="28" name="house_number">
       <Position>5</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>681</StateNumber>
+      <StateNumber>839</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <index id="52" parent="28" name="adresses_pkey">
-      <ObjectId>24933</ObjectId>
-      <StateNumber>681</StateNumber>
+      <ObjectId>25322</ObjectId>
+      <StateNumber>839</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
     <key id="53" parent="28" name="adresses_pkey">
-      <ObjectId>24934</ObjectId>
-      <StateNumber>681</StateNumber>
+      <ObjectId>25323</ObjectId>
+      <StateNumber>839</StateNumber>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>adresses_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
     <foreign-key id="54" parent="28" name="adresses_state_id_fkey">
-      <ObjectId>24994</ObjectId>
-      <StateNumber>692</StateNumber>
+      <ObjectId>25383</ObjectId>
+      <StateNumber>850</StateNumber>
       <ColNames>state_id</ColNames>
-      <RefTableId>24935</RefTableId>
+      <RefTableId>25324</RefTableId>
       <RefColPositions>1</RefColPositions>
-      <RefTableName>state</RefTableName>
+      <RefTableName>states</RefTableName>
       <RefKeyName>states_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
     <foreign-key id="55" parent="28" name="adresses_city_id_fkey">
-      <ObjectId>24999</ObjectId>
-      <StateNumber>693</StateNumber>
+      <ObjectId>25388</ObjectId>
+      <StateNumber>851</StateNumber>
       <ColNames>city_id</ColNames>
-      <RefTableId>24943</RefTableId>
+      <RefTableId>25332</RefTableId>
       <RefColPositions>1</RefColPositions>
-      <RefTableName>city</RefTableName>
+      <RefTableName>cities</RefTableName>
       <RefKeyName>cities_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
     <foreign-key id="56" parent="28" name="adresses_street_id_fkey">
-      <ObjectId>25004</ObjectId>
-      <StateNumber>694</StateNumber>
+      <ObjectId>25393</ObjectId>
+      <StateNumber>852</StateNumber>
       <ColNames>street_id</ColNames>
-      <RefTableId>24951</RefTableId>
+      <RefTableId>25340</RefTableId>
       <RefColPositions>1</RefColPositions>
-      <RefTableName>street</RefTableName>
+      <RefTableName>streets</RefTableName>
       <RefKeyName>streets_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
@@ -368,38 +368,38 @@
       <Position>1</Position>
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>729</StateNumber>
+      <StateNumber>865</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="58" parent="29" name="value">
       <Position>2</Position>
       <DataType>varchar|0s</DataType>
-      <StateNumber>729</StateNumber>
+      <StateNumber>865</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="59" parent="29" name="created_at">
       <Position>3</Position>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>729</StateNumber>
+      <StateNumber>865</StateNumber>
       <TypeId>1114</TypeId>
     </column>
     <column id="60" parent="29" name="updated_at">
       <Position>4</Position>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>729</StateNumber>
+      <StateNumber>865</StateNumber>
       <TypeId>1114</TypeId>
     </column>
     <index id="61" parent="29" name="ar_internal_metadata_pkey">
-      <ObjectId>25083</ObjectId>
-      <StateNumber>729</StateNumber>
+      <ObjectId>25423</ObjectId>
+      <StateNumber>865</StateNumber>
       <ColNames>key</ColNames>
       <Unique>1</Unique>
     </index>
     <key id="62" parent="29" name="ar_internal_metadata_pkey">
-      <ObjectId>25084</ObjectId>
-      <StateNumber>729</StateNumber>
+      <ObjectId>25424</ObjectId>
+      <StateNumber>865</StateNumber>
       <ColNames>key</ColNames>
       <UnderlyingIndexName>ar_internal_metadata_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
@@ -408,24 +408,24 @@
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>676</StateNumber>
+      <StateNumber>834</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="64" parent="30" name="label">
       <Position>2</Position>
       <DataType>varchar|0s</DataType>
-      <StateNumber>676</StateNumber>
+      <StateNumber>834</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <index id="65" parent="30" name="kategories_pkey">
-      <ObjectId>24899</ObjectId>
-      <StateNumber>676</StateNumber>
+      <ObjectId>25288</ObjectId>
+      <StateNumber>834</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
     <key id="66" parent="30" name="kategories_pkey">
-      <ObjectId>24900</ObjectId>
-      <StateNumber>676</StateNumber>
+      <ObjectId>25289</ObjectId>
+      <StateNumber>834</StateNumber>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>kategories_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
@@ -434,47 +434,47 @@
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>683</StateNumber>
+      <StateNumber>841</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="68" parent="31" name="postal_code">
       <Position>2</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>683</StateNumber>
+      <StateNumber>841</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="69" parent="31" name="name">
       <Position>3</Position>
       <DataType>varchar|0s</DataType>
-      <StateNumber>683</StateNumber>
+      <StateNumber>841</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="70" parent="31" name="state_id">
       <Position>4</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>683</StateNumber>
+      <StateNumber>841</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <index id="71" parent="31" name="cities_pkey">
-      <ObjectId>24949</ObjectId>
-      <StateNumber>683</StateNumber>
+      <ObjectId>25338</ObjectId>
+      <StateNumber>841</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
     <key id="72" parent="31" name="cities_pkey">
-      <ObjectId>24950</ObjectId>
-      <StateNumber>683</StateNumber>
+      <ObjectId>25339</ObjectId>
+      <StateNumber>841</StateNumber>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>cities_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
     <foreign-key id="73" parent="31" name="cities_state_id_fkey">
-      <ObjectId>24984</ObjectId>
-      <StateNumber>690</StateNumber>
+      <ObjectId>25373</ObjectId>
+      <StateNumber>848</StateNumber>
       <ColNames>state_id</ColNames>
-      <RefTableId>24935</RefTableId>
+      <RefTableId>25324</RefTableId>
       <RefColPositions>1</RefColPositions>
-      <RefTableName>state</RefTableName>
+      <RefTableName>states</RefTableName>
       <RefKeyName>states_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
@@ -482,154 +482,154 @@
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>677</StateNumber>
+      <StateNumber>835</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="75" parent="32" name="label">
       <Position>2</Position>
       <DataType>varchar|0s</DataType>
-      <StateNumber>677</StateNumber>
+      <StateNumber>835</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="76" parent="32" name="description">
       <Position>3</Position>
       <DataType>text|0s</DataType>
-      <StateNumber>677</StateNumber>
+      <StateNumber>835</StateNumber>
       <TypeId>25</TypeId>
     </column>
     <column id="77" parent="32" name="owner_id">
       <Position>4</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>677</StateNumber>
+      <StateNumber>835</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="78" parent="32" name="kategory_id">
       <Position>5</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>677</StateNumber>
+      <StateNumber>835</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="79" parent="32" name="active">
       <Position>6</Position>
       <DataType>boolean|0s</DataType>
-      <StateNumber>677</StateNumber>
+      <StateNumber>835</StateNumber>
       <TypeId>16</TypeId>
     </column>
     <column id="80" parent="32" name="start_date">
       <Position>7</Position>
       <DataType>date|0s</DataType>
-      <StateNumber>677</StateNumber>
+      <StateNumber>835</StateNumber>
       <TypeId>1082</TypeId>
     </column>
     <column id="81" parent="32" name="end_date">
       <Position>8</Position>
       <DataType>date|0s</DataType>
-      <StateNumber>677</StateNumber>
+      <StateNumber>835</StateNumber>
       <TypeId>1082</TypeId>
     </column>
     <column id="82" parent="32" name="adress_id">
       <Position>9</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>677</StateNumber>
+      <StateNumber>835</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="83" parent="32" name="wage_per_hour">
       <Position>10</Position>
       <DataType>double precision|0s</DataType>
-      <StateNumber>677</StateNumber>
+      <StateNumber>835</StateNumber>
       <TypeId>701</TypeId>
     </column>
     <index id="84" parent="32" name="offers_pkey">
-      <ObjectId>24907</ObjectId>
-      <StateNumber>677</StateNumber>
+      <ObjectId>25296</ObjectId>
+      <StateNumber>835</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
     <key id="85" parent="32" name="offers_pkey">
-      <ObjectId>24908</ObjectId>
-      <StateNumber>677</StateNumber>
+      <ObjectId>25297</ObjectId>
+      <StateNumber>835</StateNumber>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>offers_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
     <foreign-key id="86" parent="32" name="offers_owner_id_fkey">
-      <ObjectId>24959</ObjectId>
-      <StateNumber>685</StateNumber>
+      <ObjectId>25348</ObjectId>
+      <StateNumber>843</StateNumber>
       <ColNames>owner_id</ColNames>
-      <RefTableId>24909</RefTableId>
+      <RefTableId>25298</RefTableId>
       <RefColPositions>1</RefColPositions>
-      <RefTableName>user</RefTableName>
+      <RefTableName>users</RefTableName>
       <RefKeyName>users_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
     <foreign-key id="87" parent="32" name="offers_kategory_id_fkey">
-      <ObjectId>24964</ObjectId>
-      <StateNumber>686</StateNumber>
+      <ObjectId>25353</ObjectId>
+      <StateNumber>844</StateNumber>
       <ColNames>kategory_id</ColNames>
-      <RefTableId>24893</RefTableId>
+      <RefTableId>25282</RefTableId>
       <RefColPositions>1</RefColPositions>
-      <RefTableName>category</RefTableName>
+      <RefTableName>categories</RefTableName>
       <RefKeyName>kategories_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
     <foreign-key id="88" parent="32" name="offers_adress_id_fkey">
-      <ObjectId>24989</ObjectId>
-      <StateNumber>691</StateNumber>
+      <ObjectId>25378</ObjectId>
+      <StateNumber>849</StateNumber>
       <ColNames>adress_id</ColNames>
-      <RefTableId>24930</RefTableId>
+      <RefTableId>25319</RefTableId>
       <RefColPositions>1</RefColPositions>
-      <RefTableName>address</RefTableName>
+      <RefTableName>adresses</RefTableName>
       <RefKeyName>adresses_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
     <column id="89" parent="33" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>679</StateNumber>
+      <StateNumber>837</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="90" parent="33" name="rated_at">
       <Position>2</Position>
       <DataType>date|0s</DataType>
-      <StateNumber>679</StateNumber>
+      <StateNumber>837</StateNumber>
       <TypeId>1082</TypeId>
     </column>
     <column id="91" parent="33" name="stars_count">
       <Position>3</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>679</StateNumber>
+      <StateNumber>837</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="92" parent="33" name="rated_user">
       <Position>4</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>679</StateNumber>
+      <StateNumber>837</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="93" parent="33" name="rated_by">
       <Position>5</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>679</StateNumber>
+      <StateNumber>837</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <foreign-key id="94" parent="33" name="rating_history_rated_user_fkey">
-      <ObjectId>25009</ObjectId>
-      <StateNumber>695</StateNumber>
+      <ObjectId>25398</ObjectId>
+      <StateNumber>853</StateNumber>
       <ColNames>rated_user</ColNames>
-      <RefTableId>24909</RefTableId>
+      <RefTableId>25298</RefTableId>
       <RefColPositions>1</RefColPositions>
-      <RefTableName>user</RefTableName>
+      <RefTableName>users</RefTableName>
       <RefKeyName>users_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
     <foreign-key id="95" parent="33" name="rating_history_rated_by_fkey">
-      <ObjectId>25014</ObjectId>
-      <StateNumber>696</StateNumber>
+      <ObjectId>25403</ObjectId>
+      <StateNumber>854</StateNumber>
       <ColNames>rated_by</ColNames>
-      <RefTableId>24909</RefTableId>
+      <RefTableId>25298</RefTableId>
       <RefColPositions>1</RefColPositions>
-      <RefTableName>user</RefTableName>
+      <RefTableName>users</RefTableName>
       <RefKeyName>users_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
@@ -637,18 +637,18 @@
       <Position>1</Position>
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>728</StateNumber>
+      <StateNumber>864</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <index id="97" parent="34" name="schema_migrations_pkey">
-      <ObjectId>25075</ObjectId>
-      <StateNumber>728</StateNumber>
+      <ObjectId>25415</ObjectId>
+      <StateNumber>864</StateNumber>
       <ColNames>version</ColNames>
       <Unique>1</Unique>
     </index>
     <key id="98" parent="34" name="schema_migrations_pkey">
-      <ObjectId>25076</ObjectId>
-      <StateNumber>728</StateNumber>
+      <ObjectId>25416</ObjectId>
+      <StateNumber>864</StateNumber>
       <ColNames>version</ColNames>
       <UnderlyingIndexName>schema_migrations_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
@@ -657,24 +657,24 @@
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>682</StateNumber>
+      <StateNumber>840</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="100" parent="35" name="name">
       <Position>2</Position>
       <DataType>varchar|0s</DataType>
-      <StateNumber>682</StateNumber>
+      <StateNumber>840</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <index id="101" parent="35" name="states_pkey">
-      <ObjectId>24941</ObjectId>
-      <StateNumber>682</StateNumber>
+      <ObjectId>25330</ObjectId>
+      <StateNumber>840</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
     <key id="102" parent="35" name="states_pkey">
-      <ObjectId>24942</ObjectId>
-      <StateNumber>682</StateNumber>
+      <ObjectId>25331</ObjectId>
+      <StateNumber>840</StateNumber>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>states_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
@@ -683,41 +683,41 @@
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>684</StateNumber>
+      <StateNumber>842</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="104" parent="36" name="name">
       <Position>2</Position>
       <DataType>varchar|0s</DataType>
-      <StateNumber>684</StateNumber>
+      <StateNumber>842</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="105" parent="36" name="city_id">
       <Position>3</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>684</StateNumber>
+      <StateNumber>842</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <index id="106" parent="36" name="streets_pkey">
-      <ObjectId>24957</ObjectId>
-      <StateNumber>684</StateNumber>
+      <ObjectId>25346</ObjectId>
+      <StateNumber>842</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
     <key id="107" parent="36" name="streets_pkey">
-      <ObjectId>24958</ObjectId>
-      <StateNumber>684</StateNumber>
+      <ObjectId>25347</ObjectId>
+      <StateNumber>842</StateNumber>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>streets_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
     <foreign-key id="108" parent="36" name="streets_city_id_fkey">
-      <ObjectId>24979</ObjectId>
-      <StateNumber>689</StateNumber>
+      <ObjectId>25368</ObjectId>
+      <StateNumber>847</StateNumber>
       <ColNames>city_id</ColNames>
-      <RefTableId>24943</RefTableId>
+      <RefTableId>25332</RefTableId>
       <RefColPositions>1</RefColPositions>
-      <RefTableName>city</RefTableName>
+      <RefTableName>cities</RefTableName>
       <RefKeyName>cities_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
@@ -725,73 +725,67 @@
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>678</StateNumber>
+      <StateNumber>836</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="110" parent="37" name="full_name">
       <Position>2</Position>
       <DataType>varchar|0s</DataType>
-      <StateNumber>678</StateNumber>
+      <StateNumber>836</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="111" parent="37" name="email">
       <Position>3</Position>
       <DataType>varchar|0s</DataType>
-      <StateNumber>678</StateNumber>
+      <StateNumber>836</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="112" parent="37" name="gender">
       <Position>4</Position>
       <DataType>varchar|0s</DataType>
-      <StateNumber>678</StateNumber>
+      <StateNumber>836</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="113" parent="37" name="date_of_birth">
       <Position>5</Position>
       <DataType>varchar|0s</DataType>
-      <StateNumber>678</StateNumber>
+      <StateNumber>836</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="114" parent="37" name="created_at">
       <Position>6</Position>
       <DataType>varchar|0s</DataType>
-      <StateNumber>678</StateNumber>
+      <StateNumber>836</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="115" parent="37" name="country_code">
-      <Position>7</Position>
-      <DataType>integer|0s</DataType>
-      <StateNumber>678</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <column id="116" parent="37" name="password">
+    <column id="115" parent="37" name="password_digest">
       <Position>8</Position>
-      <DataType>varchar|0s</DataType>
-      <StateNumber>705</StateNumber>
-      <TypeId>1043</TypeId>
+      <DataType>text|0s</DataType>
+      <StateNumber>913</StateNumber>
+      <TypeId>25</TypeId>
     </column>
-    <index id="117" parent="37" name="users_pkey">
-      <ObjectId>24915</ObjectId>
-      <StateNumber>678</StateNumber>
+    <index id="116" parent="37" name="users_pkey">
+      <ObjectId>25304</ObjectId>
+      <StateNumber>836</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="118" parent="37" name="users_email_key">
-      <ObjectId>24917</ObjectId>
-      <StateNumber>678</StateNumber>
+    <index id="117" parent="37" name="users_email_key">
+      <ObjectId>25306</ObjectId>
+      <StateNumber>836</StateNumber>
       <ColNames>email</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="119" parent="37" name="users_pkey">
-      <ObjectId>24916</ObjectId>
-      <StateNumber>678</StateNumber>
+    <key id="118" parent="37" name="users_pkey">
+      <ObjectId>25305</ObjectId>
+      <StateNumber>836</StateNumber>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>users_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <key id="120" parent="37" name="users_email_key">
-      <ObjectId>24918</ObjectId>
-      <StateNumber>678</StateNumber>
+    <key id="119" parent="37" name="users_email_key">
+      <ObjectId>25307</ObjectId>
+      <StateNumber>836</StateNumber>
       <ColNames>email</ColNames>
       <UnderlyingIndexName>users_email_key</UnderlyingIndexName>
     </key>

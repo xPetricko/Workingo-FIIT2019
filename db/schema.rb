@@ -29,14 +29,14 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer "house_number"
   end
 
+  create_table "categories", id: :integer, default: nil, force: :cascade do |t|
+    t.string "label"
+  end
+
   create_table "cities", id: :integer, default: nil, force: :cascade do |t|
     t.integer "postal_code"
     t.string "name"
     t.integer "state_id"
-  end
-
-  create_table "kategories", id: :integer, default: nil, force: :cascade do |t|
-    t.string "label"
   end
 
   create_table "offers", id: :integer, default: nil, force: :cascade do |t|
@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.string "gender"
     t.string "date_of_birth"
     t.string "created_at"
-    t.string "password"
+    t.text "password_digest"
     t.index ["email"], name: "users_email_key", unique: true
   end
 
@@ -85,9 +85,10 @@ ActiveRecord::Schema.define(version: 0) do
   add_foreign_key "adresses", "streets", name: "adresses_street_id_fkey"
   add_foreign_key "cities", "states", name: "cities_state_id_fkey"
   add_foreign_key "offers", "adresses", name: "offers_adress_id_fkey"
-  add_foreign_key "offers", "kategories", name: "offers_kategory_id_fkey"
+  add_foreign_key "offers", "categories", column: "kategory_id", name: "offers_kategory_id_fkey"
   add_foreign_key "offers", "users", column: "owner_id", name: "offers_owner_id_fkey"
   add_foreign_key "rating_history", "users", column: "rated_by", name: "rating_history_rated_by_fkey"
   add_foreign_key "rating_history", "users", column: "rated_user", name: "rating_history_rated_user_fkey"
   add_foreign_key "streets", "cities", name: "streets_city_id_fkey"
 end
+
