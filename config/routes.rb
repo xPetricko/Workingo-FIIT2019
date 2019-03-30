@@ -8,4 +8,7 @@ Rails.application.routes.draw do
   get  '/contact', to: 'pages#contact'
   get  '/signup',  to: 'users#new'
 
+
+
+  resources :users
 end

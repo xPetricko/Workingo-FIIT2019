@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2019_03_30_153512) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -91,4 +91,3 @@ ActiveRecord::Schema.define(version: 0) do
   add_foreign_key "rating_history", "users", column: "rated_user", name: "rating_history_rated_user_fkey"
   add_foreign_key "streets", "cities", name: "streets_city_id_fkey"
 end
-
