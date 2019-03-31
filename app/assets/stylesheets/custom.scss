@@ -1,6 +1,8 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
+
 /* mixins, variables, etc. */
 
 $gray-medium-light: #eaeaea;
@@ -14,6 +16,7 @@ $gray-medium-light: #eaeaea;
 
 body {
   padding-top: 60px;
+  background-color: white;
 }
 
 section {
@@ -61,7 +64,6 @@ p {
 
 /* header */
 
-
 #logo {
   float: left;
   margin-right: 10px;
@@ -75,6 +77,11 @@ p {
     color: white;
     text-decoration: none;
   }
+}
+
+.jumbotron{
+  color: #fff;
+  background-color: #222222;
 }
 
 /* footer */
@@ -180,5 +187,17 @@ input {
   @extend .has-error;
   .form-control {
     color: $state-danger-text;
+  }
+}
+
+/* Users index */
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-lighter;
   }
 }
