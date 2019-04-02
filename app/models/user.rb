@@ -1,5 +1,6 @@
 class User < ApplicationRecord
 
+
   before_save { email.downcase! }
   before_create :check_max_value
 
@@ -18,6 +19,9 @@ class User < ApplicationRecord
   validates :email, presence: true, length: {maximum: 100},
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: {case_sensitive: false}
+
+  validates :date_of_birth, presence: true, length: {maximum: 10}
+
 
 
   has_secure_password

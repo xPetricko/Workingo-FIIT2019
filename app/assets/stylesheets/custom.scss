@@ -201,3 +201,24 @@ input {
     border-bottom: 1px solid $gray-lighter;
   }
 }
+.menu_button:hover {
+  background-color: #93d7ff;
+}
+
+
+.menu_button {
+  background-color: #65c1ff; /* Green background */
+  border-radius: 25px;
+  max-width: 51%;
+  border: 1px solid #000000; /* Green border */
+  color: #000000; /* White text */
+  padding: 10px 24px; /* Some padding */
+  float: left; /* Float the buttons side by side */
+  flex: 1 0 21%;
+  font-weight: bold;
+  alignment: right;
+}
+
+.btn-lg {
+  margin: 10px;
+}
