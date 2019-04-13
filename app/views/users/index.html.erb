@@ -3,8 +3,17 @@
 
 
 
-  <ul class="users">
-    <% @users.each do |user| %>
-      <%= render user %>
-    <% end %>
-  </ul>
+<% @a=0 %>
+<ul class="users">
+
+  <% @users.each do |user| %>
+
+    <% @a+=1 %>
+
+    <% if @a==5 %>
+      <%break %>
+    <%end %>
+    <%= render user %>
+  <% end %>
+</ul>
+

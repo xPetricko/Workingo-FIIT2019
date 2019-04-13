@@ -7,11 +7,10 @@
         <%= gravatar_for @user %>
         <a href="http://gravatar.com/emails" target="_blank">Change</a>
       </div>
-
-
-
-
     <%= render 'form' %>
 
+
+    <%= link_to "delete", @user, method: :delete,
+                data: { confirm: "You sure?" } %>
    </div>
 </div>
