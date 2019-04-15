@@ -1,19 +1,30 @@
+
 <% provide(:title, 'All users') %>
 <h1>All users</h1>
 
+<h2> Filter users by name </h2>
+  <%= form_tag(users_path, method: :get) do %>
+    <%= text_field_tag(:name, params[:name], class: 'form-control')%>
+
+    <%= label_tag(:admin, "Admin user") %>
+    <%= check_box_tag(:admin) %>
 
 
-<% @a=0 %>
+    <%= submit_tag ("Search"), class: "btn btn-lg btn-primary" %>
+  <% end %>
+<%= link_to "Reset search", users_path, class: "btn btn-lg btn-primary" %>
+
+<%= will_paginate  %>
 <ul class="users">
-
   <% @users.each do |user| %>
-
-    <% @a+=1 %>
-
-    <% if @a==5 %>
-      <%break %>
-    <%end %>
-    <%= render user %>
+    <li>
+      <%= gravatar_for user, size: 50 %>
+      <%= link_to user.name, user %>
+      <% if current_user.admin? && !current_user?(user) %>
+        | <%= link_to "delete", user, method: :delete,
+                      data: { confirm: "You sure?" } %>
+      <% end %>
+    </li>
   <% end %>
 </ul>
-
+<%= will_paginate  %>

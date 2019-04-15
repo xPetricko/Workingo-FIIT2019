@@ -1,20 +1,17 @@
 <%= form_for(@user) do |f| %>
-  <%= render 'shared/error_messages', object: @user %>
+  <%= render 'shared/error_messages', object: f.object %>
 
-  <%= f.label :full_name %>
-  <%= f.text_field :full_name, class: 'form-control',placeholder: 'Name Surname' %>
-
-  <%= f.label :date_of_birth %>
-  <%= f.text_field :date_of_birth, class: 'form-control', placeholder: 'MM-DD-YYYY' %>
+  <%= f.label :name %>
+  <%= f.text_field :name, class: 'form-control' %>
 
   <%= f.label :email %>
-  <%= f.email_field :email, class: 'form-control', placeholder: 'example@provider.com'%>
+  <%= f.email_field :email, class: 'form-control' %>
 
   <%= f.label :password %>
-  <%= f.password_field :password, class: 'form-control', placeholder: 'password'%>
+  <%= f.password_field :password, class: 'form-control' %>
 
-  <%= f.label :password_confirmation, "Confirmation" %>
-  <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'repeat password' %>
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation, class: 'form-control' %>
 
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>
 <% end %>

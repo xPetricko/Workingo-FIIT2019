@@ -1,25 +1,20 @@
-<% provide(:title, @user.full_name) %>
+<% provide(:title, @user.name) %>
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
       <h1>
         <%= gravatar_for @user %>
-        <%= @user.full_name %>
+        <%= @user.name %>
       </h1>
     </section>
   </aside>
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= @user.email %>
-      </h1>
-    </section>
-  </aside>
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= @user.date_of_birth %>
-      </h1>
-    </section>
-  </aside>
+</div>
+<div class="col-md-8">
+  <% if @user.offers.any? %>
+    <h3>Your job offers (<%= @user.offers.count %>)</h3>
+    <ol class="microposts">
+      <%= render @offers %>
+    </ol>
+    <%= will_paginate @offers %>
+  <% end %>
 </div>

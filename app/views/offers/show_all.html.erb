@@ -1,0 +1,15 @@
+
+<% provide(:title, 'All offers') %>
+<h1>All Offers</h1>
+
+<%= will_paginate  %>
+<ul class="users">
+  <% @offers.each do |offer| %>
+    <li>
+      <%= gravatar_for offer.user, size: 50 %>
+      <%= link_to offer.user.name, offer.user %>
+      <%= render offer %>
+    </li>
+  <% end %>
+</ul>
+<%= will_paginate  %>
