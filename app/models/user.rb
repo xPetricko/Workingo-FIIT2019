@@ -14,12 +14,12 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
   
-  def self.search(name, admin)
+  def self.search(name, admin, email)
 
-    if name and admin
-      User.where("name like ? and admin = ?", "%#{name}%", true)
+    if admin
+      User.where("name like ? and email like ? and admin = ?", "%#{name}%", "%#{email}%", true)
     else
-      User.where("name like ?", "%#{name}%")
+      User.where("name like ? and email like ?", "%#{name}%", "%#{email}%")
     end
   end
 

@@ -1,30 +1,76 @@
 
 <% provide(:title, 'All users') %>
-<h1>All users</h1>
-
-<h2> Filter users by name </h2>
-  <%= form_tag(users_path, method: :get) do %>
-    <%= text_field_tag(:name, params[:name], class: 'form-control')%>
-
-    <%= label_tag(:admin, "Admin user") %>
-    <%= check_box_tag(:admin) %>
+<h1 align="center">All users</h1>
 
 
-    <%= submit_tag ("Search"), class: "btn btn-lg btn-primary" %>
-  <% end %>
-<%= link_to "Reset search", users_path, class: "btn btn-lg btn-primary" %>
 
-<%= will_paginate  %>
-<ul class="users">
-  <% @users.each do |user| %>
-    <li>
-      <%= gravatar_for user, size: 50 %>
-      <%= link_to user.name, user %>
-      <% if current_user.admin? && !current_user?(user) %>
-        | <%= link_to "delete", user, method: :delete,
-                      data: { confirm: "You sure?" } %>
+
+<div class="container-fluid">
+  <div class="row content">
+
+    <div class="col-sm-5 sidenav ">
+      <h4>Search Users</h4>
+
+      <div class="pl-2 pt-2 input-group border-right border-bottom border-blue">
+        <%= form_tag(users_path, method: :get) do %>
+            <div class="form-group row">
+              <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+              <div class="col-sm-10">
+                <%= text_field_tag(:email, params[:email], class: 'form-control', id: "inputEmail3", placeholder: "Email")%>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputName3" class="col-sm-2 col-form-label">Name</label>
+              <div class="col-sm-10">
+                <%= text_field_tag(:name, params[:name], class: 'form-control',id: "inputName3", placeholder: "Name")%>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-sm-5">Admin user:</div>
+              <div class="col-sm-7">
+                <div class="form-check">
+                  <%= check_box_tag(:admin, class:"form-check-input", type: "checkbox", id: "gridCheck1") %>
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary border-0", style="background-color: #131c2d">Search</button>
+              </div>
+            </div>
+          <div class="form-group row">
+            <div class="col-sm-10">
+            <%= link_to "Reset search", users_path, class: "btn btn-primary border-0", style: "background-color: #131c2d" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+    </div>
+
+    <div class="col-sm-7">
+      <hr>
+      <% if @users.empty? %>
+        <div class="alert alert-dark" role="alert">
+          No users found.
+        </div>
       <% end %>
-    </li>
-  <% end %>
-</ul>
-<%= will_paginate  %>
+            <%= will_paginate  %>
+      <hr>
+      <ul class="users">
+        <% @users.each do |user| %>
+            <%= gravatar_for user, size: 50 %>
+            <%= link_to user.name, user %>
+            <% if current_user.admin? && !current_user?(user) %>
+              | <%= link_to "delete", user, method: :delete,
+                            data: { confirm: "You sure?" } %>
+            <% end %>
+          <hr>
+        <% end %>
+      </ul>
+      <%= will_paginate @users, :class => "apple_pagination" %>
+      <br>
+      <hr>
+    </div>
+  </div>
+</div>

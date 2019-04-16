@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   #before_action :admin_user,     only: :destroy
 
   def index()
-    @users = User.search(params[:name], params[:admin]).order(:name).paginate(page: params[:page], per_page: 10)
+    @users = User.search(params[:name], params[:admin], params[:email]).order(:name).paginate(page: params[:page], per_page: 10)
   end
 
   def show
@@ -58,7 +58,7 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email, :password,
-                                 :password_confirmation, :admin )
+                                 :password_confirmation, :admin, :per_page )
   end
 
 
