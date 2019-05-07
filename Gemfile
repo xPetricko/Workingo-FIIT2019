@@ -10,6 +10,12 @@ gem 'jquery-rails'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap4'
 
+gem 'countries', require: 'countries/global'
+gem 'city-state'
+
+gem 'bootstrap4-datetime-picker-rails'
+gem "font-awesome-rails"
+
 gem 'bootstrap-sass', '3.3.7'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'

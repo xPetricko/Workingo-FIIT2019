@@ -1,7 +1,92 @@
-<%= form_for(@offer) do |f| %>
+<%= form_for(@offer, id: "offer_form") do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
     <%= f.text_area :content, placeholder: "Compose new offer..." %>
   </div>
   <%= f.submit "Post", class: "btn btn-primary" %>
+  <%= f.collection_select :category, Category.order(:name), :id, :name, include_blank: true%>
+  <div class="field">
+    <br/>
+    <%= f.label :state %>
+    <%= f.collection_select :state, @states, :id, :name, prompt_text: "Select state", include_blank: true%>
+
+
+    <%= f.label :province %>
+    <%= f.collection_select :province, @provinces, :id, :name, prompt_text: "Select province", include_blank: true%>
+
+    <%= f.label :city %>
+    <%= f.collection_select :city, @cities, :id, :name, prompt_text: "Select City", include_blank: true%>
+
+
+
+    <hr/>
+    <hr/>
+    <br/>
+
+    <br/>
+
+<!--    <%#= f.label :city, "City" %> <br />-->
+<!--    <%#= f.grouped_collection_select :city, Province.order(:name), :cities, :name, :id, :name,
+                                    include_blank: true%>-->
+  </div>
 <% end %>
+
+
+
+
+
+
+<script>
+  console.log("LLLLL");
+  $('#offer_state').change(function (){
+      console.log("here");
+      var state = $(this).val();
+      console.log(state);
+      $.ajax({
+          url: "/offers/new",
+          method: "GET",
+          dataType: "json",
+          data: {state: state},
+          error: function (xhr, status, error) {
+              console.error('AJAX Error: ' + status + error);
+          },
+          success: function (response) {
+              console.log(response);
+              var provinces = response.provinces;
+              $("#offer_province").empty();
+              $("#offer_city").empty();
+
+              $("#offer_province").append('<option>Select Province</option>');
+              provinces.forEach( function(province) {
+                  $("#offer_province").append('<option value="' + province.id + '">' + province.name + '</option>');
+              })
+          }
+      });
+  });
+
+  $('#offer_province').change(function (){
+      console.log("rpovince changed");
+      var province = $(this).val();
+      console.log(province);
+      $.ajax({
+          url: "/offers/new",
+          method: "GET",
+          dataType: "json",
+          data: {province: province},
+          error: function (xhr, status, error) {
+              console.error('AJAX Error: ' + status + error);
+          },
+          success: function (response) {
+              console.log(response);
+              var cities = response.cities;
+              $("#offer_city").empty();
+
+              $("#offer_city").append('<option>Select City</option>');
+              cities.forEach( function(city) {
+                  $("#offer_city").append('<option value="' + city.id + '">' + city.name + '</option>');
+              })
+          }
+      });
+  });
+
+</script>

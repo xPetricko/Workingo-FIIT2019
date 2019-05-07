@@ -1,5 +1,11 @@
 class Offer < ApplicationRecord
   belongs_to :user
+  belongs_to :category
+
+  belongs_to :state
+  belongs_to :province
+  belongs_to :city
+
   default_scope -> { order(created_at: :desc) }
 
 

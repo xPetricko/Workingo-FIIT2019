@@ -1,0 +1,56 @@
+
+  <%#= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+<!--</div>-->
+<div class=" align-center">
+  <td class="align-middle">
+    <%= image_tag 'Logo.png' ,class: "m-5 rounded mx-auto d-block" %>
+    <h3 class="text-center">Find job wherever you want!</h3>
+  </td>
+</div>
+  <%= form_tag(offers_search_path,class: 'form-group', method: :get) do %>
+    <div class="align-left m-3 input-group align-left">
+      <span class="input-group-text purple lighten-3" id="basic-text1"><i class="fa fa-search"
+                                                                        aria-hidden="true"></i></span>
+      <%= text_field_tag :search, params[:search], class: 'form-control' %>
+
+      <div class="input-group date" id="datetimepicker4" data-target-input="nearest">
+        <div class="input-group-prepend" data-target="#datetimepicker4" data-toggle="datetimepicker">
+          <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+        </div>
+        <%= text_field_tag :start, params[:start], 'onkeydown' => 'return false', class: 'form-control datetimepicker-input', 'data-target' => '#datetimepicker4', placeholder: 'From' %>
+      </div>
+
+      <div class="input-group date" id="datetimepicker41" data-target-input="nearest">
+        <div class="input-group-prepend" data-target="#datetimepicker41" data-toggle="datetimepicker">
+         <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+        </div>
+        <%= text_field_tag :end, params[:end], class: 'form-control datetimepicker-input', id: 'dateend', 'onkeydown' => 'return false', 'data-target' => '#datetimepicker41', placeholder: 'To'  %>
+      </div>
+
+      <%= submit_tag 'Search', class: 'form-control', name: nil %>
+    </div>
+  <% end %>
+
+
+<div class="align-left mt-5 ml-4 input-group align-left">
+  <div class="input-group-prepend">
+    <h3 class="mr-5">Want to post a job?</h3>
+  </div>
+
+  <%= link_to "Sign up now!", signup_path, class: "btn btn-outline-info"%>
+</div>
+
+
+
+<script type="text/javascript">
+    $(function () {
+        $('#datetimepicker4').datetimepicker({
+            format: 'L'
+        });
+        $('#datetimepicker41').datetimepicker({
+            format: 'L'
+        });
+    });
+</script>
+
+

@@ -3,12 +3,37 @@ class OffersController < ApplicationController
 
   def new
     @offer = current_user.offers.build if logged_in?
+    @states = State.all
+    @provinces = []
+    @cities = []
+    if params[:state].present?
+      @provinces = State.find(params[:state]).provinces
+    end
+    if params[:province].present?
+      @cities = Province.find(params[:province]).cities
+    end
+    if request.xhr?
+      respond_to do |format|
+        format.json {
+          render json: {provinces: @provinces, cities: @cities}
+        }
+      end
+    end
   end
 
   def show_all
     @offers = Offer.all.paginate(page: params[:page], per_page: 5)
   end
 
+
+  def search
+    if params.present?
+      @offers = State.where(label: params[:search]).provinces + State.where(name: params[:search]).provinces
+
+    else
+      @offers = Offer.all
+    end
+  end
 
 
 
