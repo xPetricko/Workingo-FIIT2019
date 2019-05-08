@@ -1,23 +1,26 @@
 <%= form_for(@offer, id: "offer_form") do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
-    <%= f.text_area :content, placeholder: "Compose new offer..." %>
+    <%= f.text_area :content, placeholder: "Add desctription to your affer" %>
   </div>
-  <%= f.submit "Post", class: "btn btn-primary" %>
-  <%= f.collection_select :category, Category.order(:name), :id, :name, include_blank: true%>
+    <%= f.label :category_name %>
+    <%= f.text_field :category_name, data: {autocomplete_source: Category.order(:name).map(&:name)} %>
+
   <div class="field">
     <br/>
     <%= f.label :state %>
-    <%= f.collection_select :state, @states, :id, :name, prompt_text: "Select state", include_blank: true%>
+    <%= f.select :state_id, options_for_select(@states.map{ |c| [c.name, c.id] }) %>
+
 
 
     <%= f.label :province %>
-    <%= f.collection_select :province, @provinces, :id, :name, prompt_text: "Select province", include_blank: true%>
+    <%= f.collection_select :province_id, @provinces, :id, :name, prompt_text: "Select province"%>
 
     <%= f.label :city %>
-    <%= f.collection_select :city, @cities, :id, :name, prompt_text: "Select City", include_blank: true%>
+    <%= f.collection_select :city_id, @cities, :id, :name, prompt_text: "Select City"%>
 
 
+    <%= f.submit "Post", class: "btn btn-primary" %>
 
     <hr/>
     <hr/>
@@ -38,7 +41,7 @@
 
 <script>
   console.log("LLLLL");
-  $('#offer_state').change(function (){
+  $('#offer_state_id').change(function (){
       console.log("here");
       var state = $(this).val();
       console.log(state);
@@ -53,19 +56,19 @@
           success: function (response) {
               console.log(response);
               var provinces = response.provinces;
-              $("#offer_province").empty();
+              $("#offer_province_id").empty();
               $("#offer_city").empty();
 
-              $("#offer_province").append('<option>Select Province</option>');
+              $("#offer_province_id").append('<option>Select Province</option>');
               provinces.forEach( function(province) {
-                  $("#offer_province").append('<option value="' + province.id + '">' + province.name + '</option>');
+                  $("#offer_province_id").append('<option value="' + province.id + '">' + province.name + '</option>');
               })
           }
       });
   });
 
-  $('#offer_province').change(function (){
-      console.log("rpovince changed");
+  $('#offer_province_id').change(function (){
+      console.log("province changed");
       var province = $(this).val();
       console.log(province);
       $.ajax({
@@ -79,11 +82,11 @@
           success: function (response) {
               console.log(response);
               var cities = response.cities;
-              $("#offer_city").empty();
+              $("#offer_city_id").empty();
 
-              $("#offer_city").append('<option>Select City</option>');
+              $("#offer_city_id").append('<option>Select City</option>');
               cities.forEach( function(city) {
-                  $("#offer_city").append('<option value="' + city.id + '">' + city.name + '</option>');
+                  $("#offer_city_id").append('<option value="' + city.id + '">' + city.name + '</option>');
               })
           }
       });

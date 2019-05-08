@@ -11,20 +11,19 @@
     <div class="align-left m-3 input-group align-left">
       <span class="input-group-text purple lighten-3" id="basic-text1"><i class="fa fa-search"
                                                                         aria-hidden="true"></i></span>
-      <%= text_field_tag :search, params[:search], class: 'form-control' %>
+      <%= text_field_tag :search, params[:search], class: 'form-control', data: {autocomplete_source: pages_home_path } %>
 
-      <div class="input-group date" id="datetimepicker4" data-target-input="nearest">
-        <div class="input-group-prepend" data-target="#datetimepicker4" data-toggle="datetimepicker">
+      <div class="input-group date" id="datetimepicker_start" data-target-input="nearest">
+        <div class="input-group-prepend" id="date_icon_start" data-target="#datetimepicker_start" data-toggle="datetimepicker">
           <div class="input-group-text"><i class="fa fa-calendar"></i></div>
         </div>
-        <%= text_field_tag :start, params[:start], 'onkeydown' => 'return false', class: 'form-control datetimepicker-input', 'data-target' => '#datetimepicker4', placeholder: 'From' %>
+        <%= text_field_tag :date_start, params[:start], 'onkeydown' => 'return false', class: 'form-control datetimepicker-input', 'data-target' => '#datetimepicker_start', placeholder: 'From' %>
       </div>
 
-      <div class="input-group date" id="datetimepicker41" data-target-input="nearest">
-        <div class="input-group-prepend" data-target="#datetimepicker41" data-toggle="datetimepicker">
+      <div class="input-group date" id="datetimepicker_end" data-target-input="nearest">
+        <div class="input-group-prepend" id="date_icon_end" data-target="#datetimepicker_end" data-toggle="datetimepicker">
          <div class="input-group-text"><i class="fa fa-calendar"></i></div>
         </div>
-        <%= text_field_tag :end, params[:end], class: 'form-control datetimepicker-input', id: 'dateend', 'onkeydown' => 'return false', 'data-target' => '#datetimepicker41', placeholder: 'To'  %>
       </div>
 
       <%= submit_tag 'Search', class: 'form-control', name: nil %>
@@ -36,18 +35,25 @@
   <div class="input-group-prepend">
     <h3 class="mr-5">Want to post a job?</h3>
   </div>
-
   <%= link_to "Sign up now!", signup_path, class: "btn btn-outline-info"%>
+  <h4> Right now <%= @offers_count.inspect %> offers in <%= @states_count.inspect %> states and <%= @cities_count.inspect %> cities.</h4>
+  <h4> <%= @today_count.inspect %> offers added today.</h4>
 </div>
 
 
 
 <script type="text/javascript">
-    $(function () {
-        $('#datetimepicker4').datetimepicker({
+    $(function (f) {
+        $('#date_start').click(function () {
+            $('#date_icon_start').trigger('click');
+        });
+        $('#date_end').click(function () {
+            $('#date_icon_end').trigger('click');
+        });
+        $('#datetimepicker_start').datetimepicker({
             format: 'L'
         });
-        $('#datetimepicker41').datetimepicker({
+        $('#datetimepicker_end').datetimepicker({
             format: 'L'
         });
     });

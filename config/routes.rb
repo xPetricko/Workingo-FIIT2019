@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get 'pages/help'
 
 
-
+  post '/offers', to: 'offers#create'
 
   get  '/signup',  to: 'users#new'
   post '/signup',  to: 'users#create'
@@ -26,5 +26,8 @@ Rails.application.routes.draw do
 
   resources :users
   resources :offers
+  resources :states
+  resources :provinces
+  resources :cities
 
 end

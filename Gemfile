@@ -6,6 +6,7 @@ ruby '2.5.3'
 gem 'bcrypt', '3.1.12'
 gem 'faker'#,  '1.7.3'
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 gem 'will_paginate'
 gem 'will_paginate-bootstrap4'

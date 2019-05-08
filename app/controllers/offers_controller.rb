@@ -2,7 +2,7 @@ class OffersController < ApplicationController
   before_action :logged_in_user, only: [:new, :create, :destroy]
 
   def new
-    @offer = current_user.offers.build if logged_in?
+    @offer = Offer.new
     @states = State.all
     @provinces = []
     @cities = []
@@ -28,7 +28,18 @@ class OffersController < ApplicationController
 
   def search
     if params.present?
-      @offers = State.where(label: params[:search]).provinces + State.where(name: params[:search]).provinces
+      State.where("name like ?", params[:search]).each do |state|
+        temp = state.offers
+        if temp.nil?
+          @offers += temp
+        end
+      end
+      City.where("name like ?", params[:search]).each do |city|
+        temp = city.offers
+        if temp.nil?
+          @offers += temp
+        end
+      end
 
     else
       @offers = Offer.all
@@ -40,11 +51,13 @@ class OffersController < ApplicationController
 
   def create
     @offer = current_user.offers.build(offers_params)
+    @offer.category_name= (params[:offer][:category_name])
     if @offer.save
       flash[:success] = "Offer created!"
       redirect_to root_url
     else
-      render 'offers/new'
+      flash[:success] = @offer
+      redirect_to offers_new_path
     end
   end
 
@@ -54,7 +67,7 @@ class OffersController < ApplicationController
   private
 
   def offers_params
-    params.require(:offer).permit(:content)
+    params.require(:offer).permit(:content, :state_id, :province_id, :city_id)
   end
 end
 

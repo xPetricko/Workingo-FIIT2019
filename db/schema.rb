@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_18_130243) do
+ActiveRecord::Schema.define(version: 2019_05_08_090426) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,8 @@ ActiveRecord::Schema.define(version: 2019_04_18_130243) do
     t.bigint "state_id"
     t.bigint "city_id"
     t.bigint "province_id"
+    t.string "label"
+    t.date "date"
     t.index ["category_id"], name: "index_offers_on_category_id"
     t.index ["city_id"], name: "index_offers_on_city_id"
     t.index ["province_id"], name: "index_offers_on_province_id"
