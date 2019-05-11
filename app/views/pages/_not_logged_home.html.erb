@@ -11,7 +11,7 @@
     <div class="align-left m-3 input-group align-left">
       <span class="input-group-text purple lighten-3" id="basic-text1"><i class="fa fa-search"
                                                                         aria-hidden="true"></i></span>
-      <%= text_field_tag :search, params[:search], class: 'form-control', data: {autocomplete_source: pages_home_path } %>
+      <%= text_field_tag :search, params[:search], class: 'form-control', data: {autocomplete_source: pages_path} %>
 
       <div class="input-group date" id="datetimepicker_start" data-target-input="nearest">
         <div class="input-group-prepend" id="date_icon_start" data-target="#datetimepicker_start" data-toggle="datetimepicker">
@@ -24,10 +24,10 @@
         <div class="input-group-prepend" id="date_icon_end" data-target="#datetimepicker_end" data-toggle="datetimepicker">
          <div class="input-group-text"><i class="fa fa-calendar"></i></div>
         </div>
+        <%= text_field_tag :date_end, params[:end], 'onkeydown' => 'return false', class: 'form-control datetimepicker-input', 'data-target' => '#datetimepicker_end', placeholder: 'To' %>
       </div>
-
-      <%= submit_tag 'Search', class: 'form-control', name: nil %>
     </div>
+    <%= submit_tag 'Search', class: 'form-control', name: nil %>
   <% end %>
 
 
@@ -43,7 +43,7 @@
 
 
 <script type="text/javascript">
-    $(function (f) {
+    $(function () {
         $('#date_start').click(function () {
             $('#date_icon_start').trigger('click');
         });
@@ -51,10 +51,10 @@
             $('#date_icon_end').trigger('click');
         });
         $('#datetimepicker_start').datetimepicker({
-            format: 'L'
+            format: "DD-MM-YYYY"
         });
         $('#datetimepicker_end').datetimepicker({
-            format: 'L'
+            format: "DD-MM-YYYY"
         });
     });
 </script>

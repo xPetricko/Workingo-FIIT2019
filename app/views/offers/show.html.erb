@@ -1,0 +1,34 @@
+<% provide(:title, @offer.label) %>
+
+
+
+<div class="card" >
+  <div class="card-body">
+    <div class="row">
+      <div class="col-sm-8">
+        <h3 class="card-title"><%= @offer.label %></h3>
+        <br>
+        <h5>Category:</h5>
+        <h6 class="mb-2"> <%= @offer.cat_name %></h6>
+        <br>
+        <h5>Where:</h5>
+        <h6 class="card-subtitle mb-2"><%= @offer.s_name %></h6>
+        <h6 class="card-subtitle mb-2"><%= @offer.p_name %> <%= @offer.c_name %></h6>
+        <hr>
+        <h5>When:</h5>
+        <h6 class="card-subtitle mb-2"><%= @offer.date.strftime("on %A %d of %B %Y") %></h6>
+        <hr>
+
+        <h5>Description:</h5>
+        <p class="card-text"><%= @offer.content%></p>
+        <h5>Aplies:</h5>
+        <p class="card-text"><%= @offer.count %></p>
+      </div>
+      <div class="col-sm-4">
+        <div class="row">
+          <%= link_to "Show user", @offer.user, class: "card-link  align-bottom" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

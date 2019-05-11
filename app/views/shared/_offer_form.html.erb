@@ -1,6 +1,10 @@
 <%= form_for(@offer, id: "offer_form") do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
+    <%= f.label :label %>
+    <%= f.text_field :label, placeholder: "Add title"%>
+  </div>
+  <div class="field">
     <%= f.text_area :content, placeholder: "Add desctription to your affer" %>
   </div>
     <%= f.label :category_name %>
@@ -19,18 +23,21 @@
     <%= f.label :city %>
     <%= f.collection_select :city_id, @cities, :id, :name, prompt_text: "Select City"%>
 
+    <div class="input-group date" id="datetimepicker_offer" data-target-input="nearest">
+      <div class="input-group-prepend" id="date_icon_offer" data-target="#datetimepicker_offer" data-toggle="datetimepicker">
+        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+      </div>
+        <%= f.text_field :date, 'onkeydown' => 'return false', class: 'form-control datepicker-input', 'data-target' => '#datetimepicker_offer', placeholder: 'Date of job' %>
+    </div>
+  </div>
 
     <%= f.submit "Post", class: "btn btn-primary" %>
 
     <hr/>
     <hr/>
     <br/>
-
     <br/>
 
-<!--    <%#= f.label :city, "City" %> <br />-->
-<!--    <%#= f.grouped_collection_select :city, Province.order(:name), :cities, :name, :id, :name,
-                                    include_blank: true%>-->
   </div>
 <% end %>
 
@@ -40,7 +47,6 @@
 
 
 <script>
-  console.log("LLLLL");
   $('#offer_state_id').change(function (){
       console.log("here");
       var state = $(this).val();
@@ -91,5 +97,15 @@
           }
       });
   });
+
+  $(function () {
+      $('#offer_date').click(function () {
+          $('#date_icon_offer').trigger('click');
+      });
+      $('#datetimepicker_offer').datetimepicker({
+          format: "DD-MM-YYYY"
+      });
+  });
+
 
 </script>

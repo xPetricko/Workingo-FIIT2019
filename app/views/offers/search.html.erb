@@ -1,1 +1,80 @@
-<h1>Hello World!!</h1>
+<%= form_tag(offers_search_path,class: 'form-group', method: :get) do %>
+  <div class="align-left m-3 input-group align-left">
+      <span class="input-group-text purple lighten-3" id="basic-text1"><i class="fa fa-search"
+                                                                          aria-hidden="true"></i></span>
+    <%= text_field_tag :search, params[:search], class: 'form-control', data: {autocomplete_source: pages_path} %>
+
+    <div class="input-group date" id="datetimepicker_start" data-target-input="nearest">
+      <div class="input-group-prepend" id="date_icon_start" data-target="#datetimepicker_start" data-toggle="datetimepicker">
+        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+      </div>
+      <%= text_field_tag :date_start, params[:start], 'onkeydown' => 'return false', class: 'form-control datetimepicker-input', 'data-target' => '#datetimepicker_start', placeholder: 'From' %>
+    </div>
+
+    <div class="input-group date" id="datetimepicker_end" data-target-input="nearest">
+      <div class="input-group-prepend" id="date_icon_end" data-target="#datetimepicker_end" data-toggle="datetimepicker">
+        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+      </div>
+      <%= text_field_tag :date_end, params[:end], 'onkeydown' => 'return false', class: 'form-control datetimepicker-input', 'data-target' => '#datetimepicker_end', placeholder: 'To' %>
+    </div>
+
+
+    <%= submit_tag 'Search', class: 'form-control', name: nil %>
+    <%= link_to  "Home", root_path %>
+  </div>
+<% end %>
+<% if @offers.empty? %>
+  <div class="alert alert-dark" role="alert">
+    No results found.
+  </div>
+<% else %>
+  <ul class="users">
+    Found <%= @offers.count.inspect %> result/s.
+    <br>
+    <%= will_paginate  %>
+
+    <% @offers.each do |offer| %>
+      <div class="card" >
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-8">
+              <h5 class="card-title"><%= offer.label %></h5>
+              <h6 class="card-subtitle mb-2 text-muted"><%= offer.cat_name %> - <%= offer.s_name %> <%= offer.c_name %></h6>
+              <p class="card-text"><%= offer.content.truncate(60) %></p>
+            </div>
+            <div class="col-sm-4">
+              <div class="row">
+              <%= link_to "Show details", offer, class: "card-link  align-bottom" %>
+              </div>
+              <div class="row">
+              <%= link_to "Show user", offer.user, class: "card-link  align-bottom" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br>
+  <% end %>
+  </ul>
+<% end %>
+
+
+<script type="text/javascript">
+    $(function () {
+        $('#date_start').click(function () {
+            console.log("click start");
+            $('#date_icon_start').trigger('click');
+        });
+        $('#date_end').click(function () {
+            $('#date_icon_end').trigger('click');
+        });
+
+        $('#datetimepicker_start').datetimepicker({
+            format: "DD-MM-YYYY"
+        });
+        $('#datetimepicker_end').datetimepicker({
+            format: "DD-MM-YYYY"
+        });
+    });
+</script>

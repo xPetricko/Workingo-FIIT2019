@@ -10,16 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_08_090426) do
+ActiveRecord::Schema.define(version: 2019_05_10_190219) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "accepted_offers", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "offer_id"
+    t.string "contact"
+    t.index ["offer_id"], name: "index_accepted_offers_on_offer_id"
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["id"], name: "index_categories_on_id"
+    t.index ["name"], name: "index_categories_on_name"
   end
 
   create_table "cities", force: :cascade do |t|
@@ -47,6 +56,7 @@ ActiveRecord::Schema.define(version: 2019_05_08_090426) do
     t.date "date"
     t.index ["category_id"], name: "index_offers_on_category_id"
     t.index ["city_id"], name: "index_offers_on_city_id"
+    t.index ["date"], name: "index_offers_on_date"
     t.index ["province_id"], name: "index_offers_on_province_id"
     t.index ["state_id"], name: "index_offers_on_state_id"
     t.index ["user_id", "created_at"], name: "index_offers_on_user_id_and_created_at"
@@ -68,6 +78,7 @@ ActiveRecord::Schema.define(version: 2019_05_08_090426) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "code"
+    t.index ["id"], name: "index_states_on_id"
     t.index ["name"], name: "index_states_on_name", unique: true
   end
 
@@ -82,6 +93,7 @@ ActiveRecord::Schema.define(version: 2019_05_08_090426) do
     t.index ["name"], name: "index_users_on_name"
   end
 
+  add_foreign_key "accepted_offers", "offers"
   add_foreign_key "cities", "provinces"
   add_foreign_key "cities", "states"
   add_foreign_key "offers", "categories"

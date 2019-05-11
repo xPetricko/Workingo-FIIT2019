@@ -8,6 +8,8 @@ gem 'faker'#,  '1.7.3'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
+gem 'momentjs-rails', '>= 2.9.0'
+
 gem 'will_paginate'
 gem 'will_paginate-bootstrap4'
 

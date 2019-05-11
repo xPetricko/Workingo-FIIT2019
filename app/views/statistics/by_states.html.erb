@@ -1,0 +1,41 @@
+
+
+
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav ">
+      <div class="pl-2 pt-2 input-group border-right border-bottom border-blue">
+        <div class="col p-2 button-group">
+          <%= link_to "Show by categories", statistics_by_categories_path, class: "btn btn-primary border-0", style: "background-color: #131c2d" %>
+        </div>
+        <div class="col p-2 button-group">
+          <%= link_to "Show by states",statistics_by_states_path, class: "btn btn-primary border-0 disabled", style: "background-color: #131c2d" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-9">
+      <div class="album py-5 bg-light rounded ">
+        <div class="container rounded ">
+          <%= will_paginate @states  %>
+          <ul>
+            <% @states.each do |state| %>
+              <%= state.name %> -
+              <% if @results[state.id].nil? %>
+                no
+              <% else %>
+                <%= @results[state.id] %>
+              <% end %>
+              results -
+              <%= link_to "Show city details", "#" %>
+              <hr>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>

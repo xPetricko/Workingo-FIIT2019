@@ -8,12 +8,18 @@ Rails.application.routes.draw do
   get 'offers/new'
   get 'offers/show_all'
   get 'offers/search'
+
   get 'pages/about'
   get 'pages/home'
   get 'pages/help'
 
+  get 'statistics/main'
+  get 'statistics/by_categories'
+  get 'statistics/by_states'
+
 
   post '/offers', to: 'offers#create'
+  delete '/offers', to: 'offers#destroy'
 
   get  '/signup',  to: 'users#new'
   post '/signup',  to: 'users#create'
@@ -26,8 +32,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :offers
-  resources :states
-  resources :provinces
-  resources :cities
+  resources :pages
+
 
 end

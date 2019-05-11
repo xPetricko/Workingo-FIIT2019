@@ -13,6 +13,8 @@ class User < ApplicationRecord
 
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
+  default_scope -> { order(name: :asc) }
+
   
   def self.search(name, admin, email)
 

@@ -1,4 +1,11 @@
 class PagesController < ApplicationController
+  def index
+    if not params[:term].empty?
+      @results = City.order(:name).where("lower(name) like ?", "%#{params[:term].downcase}%") + State.order(:name).where("lower(name) like ?", "%#{params[:term].downcase}%") + Category.order(:name).where("lower(name) like ?", "%#{params[:term].downcase}%")
+      render json: @results.map(&:name)
+    end
+  end
+
   def about
   end
 
