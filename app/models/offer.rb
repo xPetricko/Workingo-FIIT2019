@@ -6,6 +6,7 @@ class Offer < ApplicationRecord
   belongs_to :province
   belongs_to :city
 
+  has_many :accepted_offers, dependent: :destroy
 
 
   validates :user_id, presence: true

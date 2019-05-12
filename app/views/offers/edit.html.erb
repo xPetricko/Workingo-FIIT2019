@@ -1,0 +1,21 @@
+<% provide(:title, @offer.label) %>
+<div class="card" >
+  <div class="card-body">
+    <div class="row">
+      <div class="col-sm-12">
+        <%= form_for(@offer) do |f| %>
+          <%= render 'shared/error_messages', object: f.object %>
+
+          <h3 class="card-title"> <%= f.label :label %></h3>
+          <%= f.text_field :label, class: 'form-control' %>
+          <h5 style="display:inline">Category: </h5>
+          <h6 class="mb-2"> <%= @offer.category_name %></h6>
+
+
+          <%= f.submit "Save", class: "btn btn-primary" %>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>

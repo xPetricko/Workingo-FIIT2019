@@ -25,9 +25,39 @@
         <p class="card-text"><%= @offer.count %></p>
       </div>
       <div class="col-sm-4">
-        <div class="row">
-          <%= link_to "Show user", @offer.user, class: "card-link  align-bottom" %>
-        </div>
+        <% if logged_in? && current_user?(@offer.user) %>
+          <div class="row">
+            <%= link_to "Edit offer", offers_edit_path(@offer), class: "btn btn-primary border-0 m-2 disabled", style: "background-color: #131c2d" %>
+          </div>
+          <div class="row">
+            <%= link_to "delete",@offer, method: :delete, class: "btn btn-primary border-0 m-2", style: "background-color: #131c2d",
+                        data: { confirm: "You sure?" } %>
+          </div>
+          <h3>Applies for this offer:</h3>
+          <% if @applies.present? %>
+           somthing
+          <% else %>
+            <div class="alert alert-dark" role="alert">
+              No applies yet.
+            </div>
+          <% end %>
+
+        <% else %>
+          <div class="row">
+            <%= link_to "Show user", @offer.user, class: "card-link  align-bottom" %>
+          </div>
+          <div class="row">
+
+            <%= form_tag(accepted_offers_path,class: 'form-group', method: :post) do %>
+              <%= label_tag :name %>
+              <%= text_field_tag :name, params[:name], class: 'form-control'%>
+              <%= label_tag :contact %>
+              <%= text_field_tag :contact, params[:contact], class: 'form-control', placeholder: 'Contact email' %>
+              <%= hidden_field_tag(:offer_id, @offer.id) %>
+              <%= submit_tag 'Apply for this offer', class: 'form-control' %>
+            <% end %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>

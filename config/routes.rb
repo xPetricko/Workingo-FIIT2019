@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'offers/new'
   get 'offers/show_all'
   get 'offers/search'
+  get 'offers/edit'
 
   get 'pages/about'
   get 'pages/home'
@@ -16,6 +17,13 @@ Rails.application.routes.draw do
   get 'statistics/main'
   get 'statistics/by_categories'
   get 'statistics/by_states'
+  get 'statistics/by_cities'
+
+
+  get 'pages/sc_search'
+  get 'pages/cat_search'
+
+  post '/accepted_offers', to: 'accepted_offers#create'
 
 
   post '/offers', to: 'offers#create'

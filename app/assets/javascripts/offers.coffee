@@ -8,3 +8,7 @@ jQuery ->
 jQuery ->
   $('#search').autocomplete
       source: $('#search').data('autocomplete-source')
+jQuery ->
+  $('#category').autocomplete
+    source: $('#category').data('autocomplete-source')
+

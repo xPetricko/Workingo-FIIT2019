@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_10_190219) do
+ActiveRecord::Schema.define(version: 2019_05_12_093949) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2019_05_10_190219) do
     t.datetime "updated_at", null: false
     t.bigint "offer_id"
     t.string "contact"
+    t.string "name"
     t.index ["offer_id"], name: "index_accepted_offers_on_offer_id"
   end
 
@@ -54,6 +55,7 @@ ActiveRecord::Schema.define(version: 2019_05_10_190219) do
     t.bigint "province_id"
     t.string "label"
     t.date "date"
+    t.index ["category_id", "city_id", "state_id"], name: "index_offers_on_category_id_and_city_id_and_state_id"
     t.index ["category_id"], name: "index_offers_on_category_id"
     t.index ["city_id"], name: "index_offers_on_city_id"
     t.index ["date"], name: "index_offers_on_date"

@@ -23,16 +23,24 @@
 # end
 
 
-states = State.all
-states.each do |i|
-  # State.create(label: i[1], code: i[0])
-  provinces = Province.where(state: i)
-  provinces.each do |p|
-    #Province.create(name: c[1], code: c[0], state: i)
-    cities = CS.get(i.code,p.code)
-    cities.each do  |c|
-      City.create(name: c, state:i, province: p)
-    end
-  end
+# states = State.all
+# states.each do |i|
+#   # State.create(label: i[1], code: i[0])
+#   provinces = Province.where(state: i)
+#   provinces.each do |p|
+#     #Province.create(name: c[1], code: c[0], state: i)
+#     cities = CS.get(i.code,p.code)
+#     cities.each do  |c|
+#       City.create(name: c, state:i, province: p)
+#     end
+#   end
+#
+# end
+#
 
+cities = City.all
+25.times do |time|
+  cities.each_with_index do |city, index|
+    Offer.new(label: "Fake-#{time * index+10}", content: "Fake Fake Fake Fake Fake Fake Fake Fake Fake Fake Fake Fake Fake Fake Fake Fake Fake Fake Fake Fake Fake Fake Fake Fake Fake Fake Fake Fake Fake Fake Fake Fake Fake Fake", user_id: 1, category_id: 2, state_id: city.state_id, province_id: city.province_id, city_id: city.id, date: Faker::Date.forward(2500)).save(validate: false)
+   end
 end

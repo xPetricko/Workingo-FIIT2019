@@ -1,7 +1,3 @@
-
-
-
-
 <div class="container-fluid">
   <div class="row content">
     <div class="col-sm-3 sidenav ">
@@ -18,17 +14,17 @@
     <div class="col-sm-9">
       <div class="album py-5 bg-light rounded ">
         <div class="container rounded ">
-          <%= will_paginate @categories  %>
+          <%= will_paginate @results  %>
           <ul>
-            <% @categories.each do |category| %>
-              <%= category.name %> -
-              <% if @results[category.id].nil? %>
-                no
+            <% @results.each do |result| %>
+              <h5><%= result.name %></h5>
+              <% if result.offer_count == 0 %>
+                <h6 style="display:inline">no</h6>
               <% else %>
-                <%= @results[category.id] %>
+                <h6 style="display:inline"><%= result.offer_count %></h6>
               <% end %>
               results -
-                <%= link_to "Search by this category", offers_search_path(search: category.name, date_start: "", date_end: "") %>
+                <%= link_to "Search by this category", offers_search_path(search: result.name, date_start: "", date_end: "") %>
               <hr>
             <% end %>
           </ul>

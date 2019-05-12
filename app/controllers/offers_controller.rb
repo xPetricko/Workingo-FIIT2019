@@ -25,25 +25,33 @@ class OffersController < ApplicationController
     @offers = Offer.all.paginate(page: params[:page], per_page: 5)
   end
 
+  def edit
+    @offer = Offer.find(params[:format])
+  end
 
   def search
     if params[:date_start].empty?
       params[:date_start] = Time.zone.now.beginning_of_day
+    end
+    if params[:date_end].empty?
+      params[:date_end] = Float::INFINITY
     end
     if params[:search].empty?
       @offers = Offer.select("offers.*, categories.name as cat_name, states.name as s_name, cities.name as c_name")
                     .joins("LEFT JOIN categories ON categories.id = offers.category_id")
                     .joins("LEFT JOIN states ON states.id = offers.state_id")
                     .joins("LEFT JOIN cities ON cities.id = offers.city_id")
+                    .where("date >= ? and date<= ?", params[:date_start], params[:date_end])
                     .order(:date)
                     .paginate(page: params[:page], per_page: 10)
     else
-      @offers = Offer.select("offers.*, categories.name as cat_name, states.name as s_name, cities.name as c_name")
+      @offers = Offer.select("offers.*, categories.name as cat_name, tab.*")
                     .joins("LEFT JOIN categories ON categories.id = offers.category_id")
-                    .joins("LEFT JOIN states ON states.id = offers.state_id")
-                    .joins("LEFT JOIN cities ON cities.id = offers.city_id")
-                    .where("categories.name like ? OR states.name like? OR cities.name like? and date >= ?",
-                           params[:search], params[:search], params[:search], params[:date_start])
+                    .joins("INNER JOIN (SELECT states.id as s_id, states.name as s_name ,cities.name as c_name from states
+                                         LEFT JOIN cities ON cities.state_id = states.id
+                                         WHERE states.name = '#{params[:search]}' or cities.name = '#{params[:search]}') as tab
+                            ON tab.s_id = offers.state_id")
+                    .where("date BETWEEN ? and ?", params[:date_start], params[:date_end])
                     .order(:date)
                     .paginate(page: params[:page], per_page: 10)
     end
@@ -65,13 +73,16 @@ class OffersController < ApplicationController
 
   def destroy
     Offer.transaction do
-      Offer.find(params[:id]).destroy
-      flash[:success] = "Offer deleted."
-    else
-      flash[:alert] = "Something went wrong! :("
+      begin
+        Offer.find(params[:id]).destroy
+        flash[:success] = "Offer deleted."
+      rescue
+        flash[:alert] = "Something went wrong! :("
+      end
     end
     redirect_to pages_home_path
   end
+
 
 
 
@@ -85,6 +96,9 @@ class OffersController < ApplicationController
                  .joins("LEFT JOIN provinces ON provinces.id = offers.province_id")
                  .joins("LEFT JOIN cities ON cities.id = offers.city_id")
                  .group("offers.id, cat_name, s_name,p_name,c_name").find(params[:id])
+    if logged_in? && current_user?(@offer.user)
+      @applies = AcceptedOffer.where(offer_id: @offer.id)
+    end
   end
 
 

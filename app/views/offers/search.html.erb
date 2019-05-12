@@ -2,8 +2,14 @@
   <div class="align-left m-3 input-group align-left">
       <span class="input-group-text purple lighten-3" id="basic-text1"><i class="fa fa-search"
                                                                           aria-hidden="true"></i></span>
-    <%= text_field_tag :search, params[:search], class: 'form-control', data: {autocomplete_source: pages_path} %>
-
+    <%= text_field_tag :search, params[:search],
+                       class: 'form-control',
+                       placeholder: 'State or city',
+                       data: {autocomplete_source: pages_sc_search_path}%>
+    <%= text_field_tag :category, params[:category],
+                       class: 'form-control',
+                       placeholder: "Category",
+                       data: {autocomplete_source: pages_cat_search_path} %>
     <div class="input-group date" id="datetimepicker_start" data-target-input="nearest">
       <div class="input-group-prepend" id="date_icon_start" data-target="#datetimepicker_start" data-toggle="datetimepicker">
         <div class="input-group-text"><i class="fa fa-calendar"></i></div>
