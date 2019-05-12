@@ -83,7 +83,15 @@ class OffersController < ApplicationController
     redirect_to pages_home_path
   end
 
-
+  def user_offers
+    @offers = Offer.select("offers.*, categories.name as cat_name, states.name as s_name, cities.name as c_name")
+                                   .joins("LEFT JOIN categories ON categories.id = offers.category_id")
+                                   .joins("LEFT JOIN states ON states.id = offers.state_id")
+                                   .joins("LEFT JOIN cities ON cities.id = offers.city_id")
+                                   .where(user: current_user)
+                                   .order(:date)
+                                   .paginate(page: params[:page], per_page: 10)
+  end
 
 
   def show

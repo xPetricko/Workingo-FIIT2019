@@ -2,16 +2,17 @@
 Predmet: Datázové systémy\
 Meno a priezvisko: Andrej Petričko
 
-##Stručný opis projektu
-Projekt je realizovaný ako vebová aplikácia, ktorá má slúžiť ako inzercia krátkodobých pracovných ponúk.
+## Stručný opis projektu
+Projekt je realizovaný ako vebová aplikácia, ktorá má slúžiť ako inzercia krátkodobých pracovných ponúk. 
+Používatelia si tu môžu nájsť ponuku podľa toho kde a kedy by ju chceli.
 
-##Databáza
+## Databáza
 Databáza obsahuje celkom 9 tabuliek z toho 2 boli automaticky vygenerované.
 Nasledujúci obrázok ukazuje vzťahy zvyšných siedmich zatabuľiek
 
 ![](Databaza.JPG)
-##Scenáre
-####Vytvorenie nového záznamu,
+## Scenáre
+#### Vytvorenie nového záznamu,
 Vytvorenie záznamu je zahrnuté v dvoch fuknciách. \
 \
 Prvou je registrácia používateľa. Používateľ si môže na stránke vytvoriť 
@@ -26,7 +27,7 @@ a prihlásení v hlavnom menu vyberie možnosť "**Create offer**". Následne je
 presmerovaný na formulár vytvorenia novej ponuky. Tu vyplní údaje a následne 
 potvrdí vytvorenie.
 
-####Zobrazenie konkrétneho záznamu - detail,
+#### Zobrazenie konkrétneho záznamu - detail,
 Bez prihlásenia sa dá iba zobraziť detail vybranej pracovej ponuky. Po 
 zobrazení detailu vidí používateľ detailne info o pracovej ponuke. V pravej 
 časti obrazovky má formulár prihlásenia na vybranú pracovnú ponuku. Prihlasovanie 
@@ -37,7 +38,7 @@ Po prihlásení si vie používateľ zobraziť detail svojho profilu alebo detai
 vytvorených ponúk, kde vidí podrobné informácie o ponuke a zoznam prihlásených 
 používateľov. 
 
-####Vymazanie záznamu
+#### Vymazanie záznamu
 Používateľ vie zmazať jednotlivé pracovné ponuky. Pri zobrazení detailu ponuky v 
 pravej časti sa nachádza tlačidlo "**Delete offer**". \
 \
@@ -48,7 +49,10 @@ profilu sa vymažú aj pracovné ponuky spojené s ním.\
 \
 Admin stránky vie v zobrazení používateľov zmazať vybraného používateľa. 
 
-####Zobrazenie prehľadu všetkých záznamov 
+#### Aktualizácia existujúceho záznamu,
+Používateľ si vie aktualizovať informácie o svojom profile v nastaveniach svojho profilu.
+
+#### Zobrazenie prehľadu všetkých záznamov 
 _(rozumne stránkovaných, ak je to potrebné), kde v každom riadku figuruje aspoň
  jedno číslo, pre ktorého výpočet sa využíva GROUP BY (malo by ísť o vybranú 
  relevantnú doménovú štatistiku),_
@@ -58,16 +62,13 @@ kategórie alebo štátu. Podľa toho sa mu zobrazí zoznam ponúk pre jeho výb
 Pri štátoch si vie používateľ zobraziť ešte detailne podľa miest v zvolenom štáte.
 
    
-######rozširujúci podscenár: 
-#####Filtrovanie záznamov spĺňajúcich určité kritériá zadané používateľom.
+###### rozširujúci podscenár: 
+##### Filtrovanie záznamov spĺňajúcich určité kritériá zadané používateľom.
 Používateľ vie prehľadávať ponuky podľa jeho zadaných parametrov. Na domovskej 
 sa mu zobrazí vyhľadávací formulár kde môže zadať štát alebo mesto v ktorom 
 chce nájsť ponuky a vybrať časové rozmedzie od kedy do kedy by chcel prácu.\
 Následne sa mu zobrazí okno vyhľadávania s výsledkami, kde môže vyhľadávanie
 zopakovať a má na výber ešte filtrovať podľa kategórie.
 
-####Aktualizácia existujúceho záznamu,
-Používateľ si vie aktualizovať informácie o svojom profile v nastaveniach svojho profilu.
 
-
-##Optimalizácia
+## Optimalizácia

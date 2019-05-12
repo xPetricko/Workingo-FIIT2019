@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'offers/show_all'
   get 'offers/search'
   get 'offers/edit'
+  get 'offers/user_offers'
 
   get 'pages/about'
   get 'pages/home'
