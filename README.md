@@ -72,3 +72,26 @@ zopakovať a má na výber ešte filtrovať podľa kategórie.
 
 
 ## Optimalizácia
+
+Optimalizáciu querry volaní som robil najmä pomocou indexov. Tie mi zrýchlili
+načitávania z databázy niekedy aj o 40-50 sekúnd. A však v prípade JOINov som
+musel optimalizovať aj kód volania, pretože potom často WHERE nemohol použiť
+index.
+
+Napríklad pri takomto kóde sa indexy nedali použiť. 
+```
+@offers = Offer.select("offers.*, categories.name as cat_name, states.name as s_name, cities.name as c_name")
+                       .joins("LEFT JOIN categories ON categories.id = offers.category_id")
+                       .joins("LEFT JOIN states ON states.id = offers.state_id")
+                       .joins("LEFT JOIN cities ON cities.id = offers.city_id")
+                       .where("states.name = ? OR cities.name = ? and date BETWEEN ? and ?",
+                               params[:search], params[:search], params[:date_start], params[:date_end])
+                       .order(:date)
+                       .paginate(page: params[:page], per_page: 10)
+```
+Avšak ak som namiesto LEFT JOIN použil INNER JOIN kde where podmienka bola 
+skrytá vnútri,tak databáza najprv využila index a potom spojila tabuľky.
+To ma naučilo že použitie  WHERE na tabuľky, ktoré sú časťou LEFT JOIN
+je oveľa pomalšie ako použitie INNER JOIN na tabuľku vo vtnútri ktorej bol
+použitý WHERE.
+
