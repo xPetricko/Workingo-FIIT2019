@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e91141e8-5574-4f73-998b-f91c76056250" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-    </list>
+    <list default="true" id="e91141e8-5574-4f73-998b-f91c76056250" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,8 +111,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="500">
-                <caret line="97" lean-forward="true" selection-start-line="97" selection-end-line="97" />
+              <first_editor relative-caret-position="292">
+                <caret line="89" column="10" selection-start-line="89" selection-start-column="10" selection-end-line="89" selection-end-column="10" />
               </first_editor>
               <second_editor />
             </state>
@@ -498,7 +495,7 @@
       <workItem from="1557395444093" duration="46851000" />
       <workItem from="1557593710965" duration="11600000" />
       <workItem from="1557638069348" duration="30032000" />
-      <workItem from="1557748859427" duration="2109000" />
+      <workItem from="1557748859427" duration="2751000" />
     </task>
     <task id="LOCAL-00001" summary="Príprava na 3 odovzdanie">
       <created>1557242567400</created>
@@ -518,7 +515,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="249652000" />
+    <option name="totallyTimeSpent" value="250294000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -531,7 +528,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8528827" visible="true" weight="0.16151386" />
       <window_info id="Structure" order="1" sideWeight="0.1471173" side_tool="true" weight="0.22761194" />
@@ -903,8 +899,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="500">
-            <caret line="97" lean-forward="true" selection-start-line="97" selection-end-line="97" />
+          <first_editor relative-caret-position="292">
+            <caret line="89" column="10" selection-start-line="89" selection-start-column="10" selection-end-line="89" selection-end-column="10" />
           </first_editor>
           <second_editor />
         </state>
