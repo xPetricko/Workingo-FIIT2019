@@ -140,11 +140,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/_header.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="702">
+            <state relative-caret-position="330">
               <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
               <folding>
                 <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
-                <element signature="n#li#3;n#ul#0;n#div#0;n#nav#0;n#!!top" />
               </folding>
             </state>
           </provider>
@@ -502,7 +501,7 @@
       <workItem from="1557638069348" duration="30032000" />
       <workItem from="1557748859427" duration="2751000" />
       <workItem from="1557813459328" duration="1610000" />
-      <workItem from="1560715932776" duration="6717000" />
+      <workItem from="1560715932776" duration="6960000" />
     </task>
     <task id="LOCAL-00001" summary="Príprava na 3 odovzdanie">
       <created>1557242567400</created>
@@ -522,7 +521,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="258621000" />
+    <option name="totallyTimeSpent" value="258864000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -893,11 +892,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/_header.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
+        <state relative-caret-position="330">
           <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
           <folding>
             <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
-            <element signature="n#li#3;n#ul#0;n#div#0;n#nav#0;n#!!top" />
           </folding>
         </state>
       </provider>
