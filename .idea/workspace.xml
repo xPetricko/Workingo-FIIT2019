@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e91141e8-5574-4f73-998b-f91c76056250" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/seeds.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/seeds.rb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -131,8 +132,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db/seeds.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-239">
-              <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+            <state relative-caret-position="78">
+              <caret line="46" column="23" selection-start-line="46" selection-start-column="23" selection-end-line="46" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -248,9 +249,9 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
-    <option name="width" value="1140" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="953" />
+    <option name="width" value="974" />
     <option name="height" value="1057" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -493,7 +494,7 @@
       <workItem from="1557638069348" duration="30032000" />
       <workItem from="1557748859427" duration="2751000" />
       <workItem from="1557813459328" duration="1610000" />
-      <workItem from="1560715932776" duration="3800000" />
+      <workItem from="1560715932776" duration="5537000" />
     </task>
     <task id="LOCAL-00001" summary="Príprava na 3 odovzdanie">
       <created>1557242567400</created>
@@ -513,7 +514,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="255704000" />
+    <option name="totallyTimeSpent" value="257441000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -525,10 +526,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1140" height="1057" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8528827" visible="true" weight="0.28611112" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8528827" visible="true" weight="0.16471216" />
       <window_info id="Structure" order="1" sideWeight="0.1471173" side_tool="true" weight="0.22761194" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -541,8 +542,8 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.3279743" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.5407407" visible="true" weight="0.4599567" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.45925927" side_tool="true" visible="true" weight="0.4599567" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.6556503" visible="true" weight="0.45551983" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.34434968" side_tool="true" visible="true" weight="0.45551983" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.3279743" />
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.32900432" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -888,8 +889,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/db/seeds.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-239">
-          <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+        <state relative-caret-position="78">
+          <caret line="46" column="23" selection-start-line="46" selection-start-column="23" selection-end-line="46" selection-end-column="23" />
         </state>
       </provider>
     </entry>

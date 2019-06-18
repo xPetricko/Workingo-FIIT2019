@@ -26,9 +26,18 @@
 states = CS.countries
 states.each do |i|
   State.create(name: i[1], code: i[0])
-  provinces = Province.where(state: i)
+end
+states = State.all
+states.each do |i|
+  provinces = CS.states(i.code)
   provinces.each do |p|
     Province.create(name: p[1], code: p[0], state: i)
+  end
+
+end
+states.each do |i|
+  provinces = Province.where(state: i)
+  provinces.each do |p|
     cities = CS.get(i.code,p.code)
     cities.each do  |c|
       City.create(name: c, state:i, province: p)
