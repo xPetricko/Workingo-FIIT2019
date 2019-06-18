@@ -25,10 +25,10 @@
 
 states = CS.countries
 states.each do |i|
-  State.create(label: i[1], code: i[0])
+  State.create(name: i[1], code: i[0])
   provinces = Province.where(state: i)
   provinces.each do |p|
-    #Province.create(name: c[1], code: c[0], state: i)
+    Province.create(name: p[1], code: p[0], state: i)
     cities = CS.get(i.code,p.code)
     cities.each do  |c|
       City.create(name: c, state:i, province: p)
