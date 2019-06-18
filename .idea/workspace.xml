@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e91141e8-5574-4f73-998b-f91c76056250" name="Default Changelist" comment="">
 <<<<<<< HEAD
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
 =======
@@ -13,6 +14,10 @@
 =======
       <change beforePath="$PROJECT_DIR$/app/views/offers/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/offers/show.html.erb" afterDir="false" />
 >>>>>>> parent of c396e9e... v
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/seeds.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/seeds.rb" afterDir="false" />
+>>>>>>> parent of 8921f56... header 01
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -156,6 +161,7 @@
         </entry>
       </file>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db/seeds.rb">
           <provider selected="true" editor-type-id="text-editor">
@@ -173,6 +179,13 @@
               <folding>
                 <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
               </folding>
+=======
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/db/seeds.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="78">
+              <caret line="46" column="23" selection-start-line="46" selection-start-column="23" selection-end-line="46" selection-end-column="23" />
+>>>>>>> parent of 8921f56... header 01
 =======
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db/seeds.rb">
@@ -228,6 +241,7 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
+<<<<<<< HEAD
 =======
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/user.rb">
@@ -239,6 +253,8 @@
         </entry>
       </file>
 >>>>>>> parent of c396e9e... v
+=======
+>>>>>>> parent of 8921f56... header 01
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -317,6 +333,7 @@
         <option value="$PROJECT_DIR$/config/database.yml" />
         <option value="$PROJECT_DIR$/db/seeds.rb" />
 <<<<<<< HEAD
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/app/views/layouts/_header.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/Gemfile" />
@@ -324,6 +341,8 @@
 >>>>>>> parent of 8921f56... header 01
 =======
 >>>>>>> parent of c396e9e... v
+=======
+>>>>>>> parent of 8921f56... header 01
       </list>
     </option>
   </component>
@@ -335,6 +354,9 @@
     <option name="CUSTOM_FILTER" />
   </component>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 8921f56... header 01
   <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="953" />
     <option name="width" value="974" />
@@ -421,8 +443,17 @@
               <item name="db" type="462c0819:PsiDirectoryNode" />
               <item name="migrate" type="462c0819:PsiDirectoryNode" />
             </path>
+<<<<<<< HEAD
 =======
 >>>>>>> parent of c396e9e... v
+=======
+            <path>
+              <item name="DBS_Projekt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DBS_Projekt" type="462c0819:PsiDirectoryNode" />
+              <item name="db" type="462c0819:PsiDirectoryNode" />
+              <item name="migrate" type="462c0819:PsiDirectoryNode" />
+            </path>
+>>>>>>> parent of 8921f56... header 01
           </expand>
           <select />
         </subPane>
@@ -590,6 +621,7 @@
       <workItem from="1557813459328" duration="1610000" />
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       <workItem from="1560715932776" duration="8522000" />
 =======
       <workItem from="1560715932776" duration="5537000" />
@@ -597,6 +629,9 @@
 =======
       <workItem from="1560715932776" duration="1354000" />
 >>>>>>> parent of c396e9e... v
+=======
+      <workItem from="1560715932776" duration="5537000" />
+>>>>>>> parent of 8921f56... header 01
     </task>
     <task id="LOCAL-00001" summary="Príprava na 3 odovzdanie">
       <created>1557242567400</created>
@@ -618,6 +653,7 @@
   <component name="TimeTrackingManager">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="260426000" />
 =======
     <option name="totallyTimeSpent" value="257441000" />
@@ -625,6 +661,9 @@
 =======
     <option name="totallyTimeSpent" value="253258000" />
 >>>>>>> parent of c396e9e... v
+=======
+    <option name="totallyTimeSpent" value="257441000" />
+>>>>>>> parent of 8921f56... header 01
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -657,6 +696,9 @@
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.3279743" />
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 8921f56... header 01
       <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.6556503" visible="true" weight="0.45551983" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.34434968" side_tool="true" visible="true" weight="0.45551983" />
 =======
@@ -703,6 +745,7 @@
     <option name="LAST_COMMIT_MESSAGE" value="Pridaný autocomplete" />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -765,6 +808,8 @@
       </provider>
     </entry>
 >>>>>>> parent of c396e9e... v
+=======
+>>>>>>> parent of 8921f56... header 01
     <entry file="file://$PROJECT_DIR$/app/views/statistics/by_states.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="287">
@@ -1066,6 +1111,7 @@
     <entry file="file://$PROJECT_DIR$/db/seeds.rb">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
+<<<<<<< HEAD
         <state relative-caret-position="252">
           <caret line="33" column="30" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
         </state>
@@ -1102,6 +1148,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+=======
+        <state relative-caret-position="78">
+          <caret line="46" column="23" selection-start-line="46" selection-start-column="23" selection-end-line="46" selection-end-column="23" />
+>>>>>>> parent of 8921f56... header 01
         </state>
       </provider>
     </entry>
