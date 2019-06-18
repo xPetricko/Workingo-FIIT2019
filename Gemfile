@@ -5,8 +5,8 @@ ruby '2.5.3'
 
 gem 'bcrypt', '3.1.12'
 gem 'faker'#,  '1.7.3'
-gem 'jquery-rails'
-gem 'jquery-ui-rails'
+# gem 'jquery-rails'
+# gem 'jquery-ui-rails'
 
 gem 'momentjs-rails', '>= 2.9.0'
 
