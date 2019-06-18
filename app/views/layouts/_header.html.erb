@@ -1,4 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark" style= "background-color:  #131c2d">
+  <%#= link_to "WORCOOP", root_path, id: "logo" , class: 'navbar-brand'%>
 
   <%= link_to image_tag('Logo.png', width: 150),root_path, class: "navbar-brand" %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -7,29 +8,29 @@
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <%=link_to "Home", root_path, {class: 'nav-link'}  %>
+        <%=link_to "Home", root_path, {:class => 'nav-link'}  %>
       </li>
       <% if logged_in? %>
         <li class="nav-item">
-          <%= link_to "Users", users_path, {class: 'nav-link'}  %>
+          <%= link_to "Users", users_path, {:class => 'nav-link'}  %>
         </li>
         <li class="nav-item">
-          <%= link_to "Offers", offers_search_path(search: "", date_start: "", date_end: ""), {class: 'nav-link'}  %>
+          <%= link_to "Offers", offers_search_path(search: "", date_start: "", date_end: ""), {:class => 'nav-link'}  %>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Account
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <%= link_to "Profile", current_user, class: "dropdown-item" %>
-            <%= link_to "Settings", edit_user_path(current_user), class: "dropdown-item" %>
-            <%= link_to "Logout", logout_path, method: :delete, class: "dropdown-item" %>
+            <%= link_to "Profile", current_user, :class=>"dropdown-item" %>
+            <%= link_to "Settings", edit_user_path(current_user), :class=>"dropdown-item" %>
+            <%= link_to "Logout", logout_path, method: :delete, :class=>"dropdown-item" %>
 
           </div>
         </li>
       <% else %>
         <li class="nav-item">
-        <%= link_to "Log in", login_path, class: "nav-link" %>
+        <%= link_to "Log in", login_path, :class=>"nav-link" %>
         </li>
       <% end %>
     </ul>
