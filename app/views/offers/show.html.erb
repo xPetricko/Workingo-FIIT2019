@@ -35,7 +35,12 @@
           </div>
           <h3>Applies for this offer:</h3>
           <% if @applies.present? %>
-           somthing
+            <ul>
+              <hr>
+              <% @applies.each do |apply| %>
+                <li> <%=apply.name %> - <%=apply.contact %> </li>
+              <% end %>
+            </ul>
           <% else %>
             <div class="alert alert-dark" role="alert">
               No applies yet.
@@ -54,7 +59,7 @@
               <%= label_tag :contact %>
               <%= text_field_tag :contact, params[:contact], class: 'form-control', placeholder: 'Contact email' %>
               <%= hidden_field_tag(:offer_id, @offer.id) %>
-              <%= submit_tag 'Apply for this offer', class: "form- control btn btn-primary border-0 m-2", style: "background-color: #131c2d", %>
+              <%= submit_tag 'Apply for this offer', class: "form- control btn btn-primary border-0 m-2", style: "background-color: #131c2d" %>
             <% end %>
           </div>
         <% end %>
