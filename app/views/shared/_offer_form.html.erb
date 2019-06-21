@@ -41,71 +41,70 @@
   </div>
 <% end %>
 
-
-
-
-
-
 <script>
-  $('#offer_state_id').change(function (){
-      console.log("here");
-      var state = $(this).val();
-      console.log(state);
-      $.ajax({
-          url: "/offers/new",
-          method: "GET",
-          dataType: "json",
-          data: {state: state},
-          error: function (xhr, status, error) {
-              console.error('AJAX Error: ' + status + error);
-          },
-          success: function (response) {
-              console.log(response);
-              var provinces = response.provinces;
-              $("#offer_province_id").empty();
-              $("#offer_city").empty();
+    $('#offer_state_id').change(function (){
+        console.log("here");
+        var state = $(this).val();
+        console.log(state);
+        $.ajax({
+            url: "/offers/new",
+            method: "GET",
+            dataType: "json",
+            data: {state: state},
+            error: function (xhr, status, error) {
+                console.error('AJAX Error: ' + status + error);
+            },
+            success: function (response) {
+                console.log(response);
+                var provinces = response.provinces;
+                $("#offer_province_id").empty();
+                $("#offer_city").empty();
 
-              $("#offer_province_id").append('<option>Select Province</option>');
-              provinces.forEach( function(province) {
-                  $("#offer_province_id").append('<option value="' + province.id + '">' + province.name + '</option>');
-              })
-          }
-      });
-  });
+                $("#offer_province_id").append('<option>Select Province</option>');
+                provinces.forEach( function(province) {
+                    $("#offer_province_id").append('<option value="' + province.id + '">' + province.name + '</option>');
+                })
+            }
+        });
+    });
 
-  $('#offer_province_id').change(function (){
-      console.log("province changed");
-      var province = $(this).val();
-      console.log(province);
-      $.ajax({
-          url: "/offers/new",
-          method: "GET",
-          dataType: "json",
-          data: {province: province},
-          error: function (xhr, status, error) {
-              console.error('AJAX Error: ' + status + error);
-          },
-          success: function (response) {
-              console.log(response);
-              var cities = response.cities;
-              $("#offer_city_id").empty();
+    $('#offer_province_id').change(function (){
+        console.log("province changed");
+        var province = $(this).val();
+        console.log(province);
+        $.ajax({
+            url: "/offers/new",
+            method: "GET",
+            dataType: "json",
+            data: {province: province},
+            error: function (xhr, status, error) {
+                console.error('AJAX Error: ' + status + error);
+            },
+            success: function (response) {
+                console.log(response);
+                var cities = response.cities;
+                $("#offer_city_id").empty();
 
-              $("#offer_city_id").append('<option>Select City</option>');
-              cities.forEach( function(city) {
-                  $("#offer_city_id").append('<option value="' + city.id + '">' + city.name + '</option>');
-              })
-          }
-      });
-  });
+                $("#offer_city_id").append('<option>Select City</option>');
+                cities.forEach( function(city) {
+                    $("#offer_city_id").append('<option value="' + city.id + '">' + city.name + '</option>');
+                })
+            }
+        });
+    });
 
-  $(function () {
-      $('#offer_date').click(function () {
-          $('#date_icon_offer').trigger('click');
-      });
-      $('#datetimepicker_offer').datetimepicker({
-          format: "DD-MM-YYYY"
-      });
-  });
-
-
+    $(function () {
+        $('#offer_date').click(function () {
+            $('#date_icon_offer').trigger('click');
+        });
+        $('#datetimepicker_offer').datetimepicker({
+            format: "DD-MM-YYYY"
+        });
+    });
 </script>
+
+
+
+
+
+
