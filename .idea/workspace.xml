@@ -117,8 +117,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db/seeds.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="29" column="18" lean-forward="true" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
+            <state relative-caret-position="240">
+              <caret line="31" column="18" lean-forward="true" selection-end-line="56" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -226,7 +226,6 @@
         <option value="$PROJECT_DIR$/app/views/offers/search.html.erb" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/app/views/offers/show.html.erb" />
-        <option value="$PROJECT_DIR$/db/seeds.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_header.html.erb" />
         <option value="$PROJECT_DIR$/config/database.yml" />
         <option value="$PROJECT_DIR$/db/migrate/20190620123324_add_admin_to_user.rb" />
@@ -239,6 +238,7 @@
         <option value="$PROJECT_DIR$/app/models/offer.rb" />
         <option value="$PROJECT_DIR$/app/views/shared/_offer_form.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
+        <option value="$PROJECT_DIR$/db/seeds.rb" />
       </list>
     </option>
   </component>
@@ -439,7 +439,7 @@
       <workItem from="1557748859427" duration="2751000" />
       <workItem from="1557813459328" duration="1610000" />
       <workItem from="1560715932776" duration="6717000" />
-      <workItem from="1561020284622" duration="14805000" />
+      <workItem from="1561020284622" duration="15091000" />
     </task>
     <task id="LOCAL-00001" summary="Príprava na 3 odovzdanie">
       <created>1557242567400</created>
@@ -466,7 +466,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="273426000" />
+    <option name="totallyTimeSpent" value="273712000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -479,6 +479,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8528827" visible="true" weight="0.1663113" />
       <window_info id="Structure" order="1" sideWeight="0.1471173" side_tool="true" weight="0.22761194" />
@@ -849,8 +850,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/db/seeds.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="29" column="18" lean-forward="true" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
+        <state relative-caret-position="240">
+          <caret line="31" column="18" lean-forward="true" selection-end-line="56" selection-end-column="5" />
         </state>
       </provider>
     </entry>
