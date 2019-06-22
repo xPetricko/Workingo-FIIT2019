@@ -11,7 +11,8 @@ class Offer < ApplicationRecord
 
   validates :user_id, presence: true
   validates :content, presence: true, length: { maximum: 140 }
-
+  validates :wage, presence: true
+  validates :state, presence: true
 
   def category_name
     User.all
