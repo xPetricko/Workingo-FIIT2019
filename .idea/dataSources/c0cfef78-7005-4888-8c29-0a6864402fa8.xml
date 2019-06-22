@@ -13,7 +13,7 @@
       <ObjectId>41103</ObjectId>
       <StateNumber>54316</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>2289383</IntrospectionStateNumber>
+      <IntrospectionStateNumber>2289394</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
       <Relations>sequence|table|41151|41153|1
@@ -128,7 +128,7 @@ sequence|table|41395|41397|1
       <Comment>standard public schema</Comment>
       <StateNumber>360</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>2289384</IntrospectionStateNumber>
+      <IntrospectionStateNumber>2289395</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -267,7 +267,7 @@ sequence|table|41395|41397|1
     <table id="40" parent="21" name="offers">
       <ObjectId>41202</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>145833</StateNumber>
+      <StateNumber>2289393</StateNumber>
     </table>
     <table id="41" parent="21" name="provinces">
       <ObjectId>41337</ObjectId>
@@ -287,7 +287,7 @@ sequence|table|41395|41397|1
     <table id="44" parent="21" name="users">
       <ObjectId>41153</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>54538</StateNumber>
+      <StateNumber>2289385</StateNumber>
     </table>
     <column id="45" parent="36" name="id">
       <Position>1</Position>
@@ -612,63 +612,76 @@ sequence|table|41395|41397|1
       <StateNumber>145833</StateNumber>
       <TypeId>1082</TypeId>
     </column>
-    <index id="94" parent="40" name="offers_pkey">
+    <column id="94" parent="40" name="active">
+      <Position>13</Position>
+      <DataType>boolean|0s</DataType>
+      <StateNumber>2289393</StateNumber>
+      <DefaultExpression>true</DefaultExpression>
+      <TypeId>16</TypeId>
+    </column>
+    <column id="95" parent="40" name="wage">
+      <Position>14</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>2289393</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="96" parent="40" name="offers_pkey">
       <ObjectId>41209</ObjectId>
       <StateNumber>54538</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="95" parent="40" name="index_offers_on_user_id_and_created_at">
+    <index id="97" parent="40" name="index_offers_on_user_id_and_created_at">
       <ObjectId>41217</ObjectId>
       <StateNumber>54538</StateNumber>
       <ColNames>user_id
 created_at</ColNames>
     </index>
-    <index id="96" parent="40" name="index_offers_on_user_id">
+    <index id="98" parent="40" name="index_offers_on_user_id">
       <ObjectId>41216</ObjectId>
       <StateNumber>54538</StateNumber>
       <ColNames>user_id</ColNames>
     </index>
-    <index id="97" parent="40" name="index_offers_on_category_id_and_city_id_and_state_id">
+    <index id="99" parent="40" name="index_offers_on_category_id_and_city_id_and_state_id">
       <ObjectId>49568</ObjectId>
       <StateNumber>2289353</StateNumber>
       <ColNames>category_id
 city_id
 state_id</ColNames>
     </index>
-    <index id="98" parent="40" name="index_offers_on_category_id">
+    <index id="100" parent="40" name="index_offers_on_category_id">
       <ObjectId>41231</ObjectId>
       <StateNumber>54560</StateNumber>
       <ColNames>category_id</ColNames>
     </index>
-    <index id="99" parent="40" name="index_offers_on_state_id">
+    <index id="101" parent="40" name="index_offers_on_state_id">
       <ObjectId>41266</ObjectId>
       <StateNumber>54568</StateNumber>
       <ColNames>state_id</ColNames>
     </index>
-    <index id="100" parent="40" name="index_offers_on_city_id">
+    <index id="102" parent="40" name="index_offers_on_city_id">
       <ObjectId>41272</ObjectId>
       <StateNumber>54568</StateNumber>
       <ColNames>city_id</ColNames>
     </index>
-    <index id="101" parent="40" name="index_offers_on_province_id">
+    <index id="103" parent="40" name="index_offers_on_province_id">
       <ObjectId>41364</ObjectId>
       <StateNumber>145818</StateNumber>
       <ColNames>province_id</ColNames>
     </index>
-    <index id="102" parent="40" name="index_offers_on_date">
+    <index id="104" parent="40" name="index_offers_on_date">
       <ObjectId>41373</ObjectId>
       <StateNumber>145848</StateNumber>
       <ColNames>date</ColNames>
     </index>
-    <key id="103" parent="40" name="offers_pkey">
+    <key id="105" parent="40" name="offers_pkey">
       <ObjectId>41210</ObjectId>
       <StateNumber>54538</StateNumber>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>offers_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="104" parent="40" name="fk_rails_e6095d6211">
+    <foreign-key id="106" parent="40" name="fk_rails_e6095d6211">
       <ObjectId>41211</ObjectId>
       <StateNumber>54538</StateNumber>
       <ColNames>user_id</ColNames>
@@ -678,7 +691,7 @@ state_id</ColNames>
       <RefKeyName>users_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="105" parent="40" name="fk_rails_1c7a8b3ead">
+    <foreign-key id="107" parent="40" name="fk_rails_1c7a8b3ead">
       <ObjectId>41232</ObjectId>
       <StateNumber>54560</StateNumber>
       <ColNames>category_id</ColNames>
@@ -688,7 +701,7 @@ state_id</ColNames>
       <RefKeyName>categories_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="106" parent="40" name="fk_rails_e865d4fa4e">
+    <foreign-key id="108" parent="40" name="fk_rails_e865d4fa4e">
       <ObjectId>41267</ObjectId>
       <StateNumber>54568</StateNumber>
       <ColNames>state_id</ColNames>
@@ -698,7 +711,7 @@ state_id</ColNames>
       <RefKeyName>states_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="107" parent="40" name="fk_rails_253647fecd">
+    <foreign-key id="109" parent="40" name="fk_rails_253647fecd">
       <ObjectId>41273</ObjectId>
       <StateNumber>54568</StateNumber>
       <ColNames>city_id</ColNames>
@@ -708,7 +721,7 @@ state_id</ColNames>
       <RefKeyName>cities_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="108" parent="40" name="fk_rails_ffcbca9e2a">
+    <foreign-key id="110" parent="40" name="fk_rails_ffcbca9e2a">
       <ObjectId>41365</ObjectId>
       <StateNumber>145818</StateNumber>
       <ColNames>province_id</ColNames>
@@ -718,7 +731,7 @@ state_id</ColNames>
       <RefKeyName>provinces_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="109" parent="41" name="id">
+    <column id="111" parent="41" name="id">
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
@@ -726,62 +739,62 @@ state_id</ColNames>
       <DefaultExpression>nextval(&apos;provinces_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>20</TypeId>
     </column>
-    <column id="110" parent="41" name="code">
+    <column id="112" parent="41" name="code">
       <Position>2</Position>
       <DataType>varchar|0s</DataType>
       <StateNumber>57583</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="111" parent="41" name="name">
+    <column id="113" parent="41" name="name">
       <Position>3</Position>
       <DataType>varchar|0s</DataType>
       <StateNumber>57583</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="112" parent="41" name="state_id">
+    <column id="114" parent="41" name="state_id">
       <Position>4</Position>
       <DataType>bigint|0s</DataType>
       <StateNumber>57583</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="113" parent="41" name="created_at">
+    <column id="115" parent="41" name="created_at">
       <Position>5</Position>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>57583</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="114" parent="41" name="updated_at">
+    <column id="116" parent="41" name="updated_at">
       <Position>6</Position>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>57583</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <index id="115" parent="41" name="provinces_pkey">
+    <index id="117" parent="41" name="provinces_pkey">
       <ObjectId>41344</ObjectId>
       <StateNumber>57583</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="116" parent="41" name="index_provinces_on_name">
+    <index id="118" parent="41" name="index_provinces_on_name">
       <ObjectId>41372</ObjectId>
       <StateNumber>145819</StateNumber>
       <ColNames>name</ColNames>
     </index>
-    <index id="117" parent="41" name="index_provinces_on_state_id">
+    <index id="119" parent="41" name="index_provinces_on_state_id">
       <ObjectId>41351</ObjectId>
       <StateNumber>57583</StateNumber>
       <ColNames>state_id</ColNames>
     </index>
-    <key id="118" parent="41" name="provinces_pkey">
+    <key id="120" parent="41" name="provinces_pkey">
       <ObjectId>41345</ObjectId>
       <StateNumber>57583</StateNumber>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>provinces_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="119" parent="41" name="fk_rails_966032c8d3">
+    <foreign-key id="121" parent="41" name="fk_rails_966032c8d3">
       <ObjectId>41346</ObjectId>
       <StateNumber>57583</StateNumber>
       <ColNames>state_id</ColNames>
@@ -791,27 +804,27 @@ state_id</ColNames>
       <RefKeyName>states_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="120" parent="42" name="version">
+    <column id="122" parent="42" name="version">
       <Position>1</Position>
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>54427</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="121" parent="42" name="schema_migrations_pkey">
+    <index id="123" parent="42" name="schema_migrations_pkey">
       <ObjectId>41141</ObjectId>
       <StateNumber>54427</StateNumber>
       <ColNames>version</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="122" parent="42" name="schema_migrations_pkey">
+    <key id="124" parent="42" name="schema_migrations_pkey">
       <ObjectId>41142</ObjectId>
       <StateNumber>54427</StateNumber>
       <ColNames>version</ColNames>
       <UnderlyingIndexName>schema_migrations_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="123" parent="43" name="id">
+    <column id="125" parent="43" name="id">
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
@@ -819,57 +832,57 @@ state_id</ColNames>
       <DefaultExpression>nextval(&apos;states_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>20</TypeId>
     </column>
-    <column id="124" parent="43" name="name">
+    <column id="126" parent="43" name="name">
       <Position>2</Position>
       <DataType>varchar|0s</DataType>
       <StateNumber>145819</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="125" parent="43" name="created_at">
+    <column id="127" parent="43" name="created_at">
       <Position>3</Position>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>54565</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="126" parent="43" name="updated_at">
+    <column id="128" parent="43" name="updated_at">
       <Position>4</Position>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>54565</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="127" parent="43" name="code">
+    <column id="129" parent="43" name="code">
       <Position>5</Position>
       <DataType>varchar|0s</DataType>
       <StateNumber>54824</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="128" parent="43" name="states_pkey">
+    <index id="130" parent="43" name="states_pkey">
       <ObjectId>41246</ObjectId>
       <StateNumber>54565</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="129" parent="43" name="index_states_on_name">
+    <index id="131" parent="43" name="index_states_on_name">
       <ObjectId>41371</ObjectId>
       <StateNumber>145819</StateNumber>
       <ColNames>name</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="130" parent="43" name="index_states_on_id">
+    <index id="132" parent="43" name="index_states_on_id">
       <ObjectId>41377</ObjectId>
       <StateNumber>145863</StateNumber>
       <ColNames>id</ColNames>
     </index>
-    <key id="131" parent="43" name="states_pkey">
+    <key id="133" parent="43" name="states_pkey">
       <ObjectId>41247</ObjectId>
       <StateNumber>54565</StateNumber>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>states_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="132" parent="44" name="id">
+    <column id="134" parent="44" name="id">
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
@@ -877,56 +890,63 @@ state_id</ColNames>
       <DefaultExpression>nextval(&apos;users_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>20</TypeId>
     </column>
-    <column id="133" parent="44" name="name">
+    <column id="135" parent="44" name="name">
       <Position>2</Position>
       <DataType>varchar|0s</DataType>
       <StateNumber>54429</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="134" parent="44" name="email">
+    <column id="136" parent="44" name="email">
       <Position>3</Position>
       <DataType>varchar|0s</DataType>
       <StateNumber>54429</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="135" parent="44" name="created_at">
+    <column id="137" parent="44" name="created_at">
       <Position>4</Position>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>54429</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="136" parent="44" name="updated_at">
+    <column id="138" parent="44" name="updated_at">
       <Position>5</Position>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>54429</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="137" parent="44" name="password_digest">
+    <column id="139" parent="44" name="password_digest">
       <Position>6</Position>
       <DataType>varchar|0s</DataType>
       <StateNumber>54431</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="138" parent="44" name="users_pkey">
+    <column id="140" parent="44" name="admin">
+      <Position>8</Position>
+      <DataType>boolean|0s</DataType>
+      <StateNumber>2289385</StateNumber>
+      <DefaultExpression>false</DefaultExpression>
+      <TypeId>16</TypeId>
+    </column>
+    <index id="141" parent="44" name="users_pkey">
       <ObjectId>41160</ObjectId>
       <StateNumber>54429</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="139" parent="44" name="index_users_on_email">
+    <index id="142" parent="44" name="index_users_on_email">
       <ObjectId>41162</ObjectId>
       <StateNumber>54430</StateNumber>
       <ColNames>email</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="140" parent="44" name="index_users_on_name">
+    <index id="143" parent="44" name="index_users_on_name">
       <ObjectId>41218</ObjectId>
       <StateNumber>54555</StateNumber>
       <ColNames>name</ColNames>
     </index>
-    <key id="141" parent="44" name="users_pkey">
+    <key id="144" parent="44" name="users_pkey">
       <ObjectId>41161</ObjectId>
       <StateNumber>54429</StateNumber>
       <ColNames>id</ColNames>
