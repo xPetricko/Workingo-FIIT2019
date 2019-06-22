@@ -113,7 +113,7 @@ class OffersController < ApplicationController
   private
 
   def offers_params
-    params.require(:offer).permit(:content, :label, :date, :state_id, :wage, :province_id, :city_id)
+    params.require(:offer).permit(:content, :label, :date, :state_id, :wage,   :province_id, :city_id)
   end
 end
 

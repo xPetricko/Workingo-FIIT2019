@@ -2,30 +2,52 @@
   <div class="align-left m-3 input-group align-left">
       <span class="input-group-text purple lighten-3" id="basic-text1"><i class="fa fa-search"
                                                                           aria-hidden="true"></i></span>
-    <%= text_field_tag :search, params[:search],
-                       class: 'form-control',
-                       placeholder: 'State or city',
-                       data: {autocomplete_source: pages_sc_search_path}%>
-    <%= text_field_tag :category, params[:category],
-                       class: 'form-control',
-                       placeholder: "Category",
-                       data: {autocomplete_source: pages_cat_search_path} %>
-    <div class="input-group date" id="datetimepicker_start" data-target-input="nearest">
-      <div class="input-group-prepend" id="date_icon_start" data-target="#datetimepicker_start" data-toggle="datetimepicker">
-        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+    <div class="form-row align-items-center">
+      <div class="col-md-6 mb-3">
+        <%= text_field_tag :search, params[:search], class: 'form-control', placeholder: 'State or city', data: {autocomplete_source: pages_sc_search_path} %>
       </div>
-      <%= text_field_tag :date_start, params[:start], 'onkeydown' => 'return false', class: 'form-control datetimepicker-input', 'data-target' => '#datetimepicker_start', placeholder: 'From' %>
-    </div>
-
-    <div class="input-group date" id="datetimepicker_end" data-target-input="nearest">
-      <div class="input-group-prepend" id="date_icon_end" data-target="#datetimepicker_end" data-toggle="datetimepicker">
-        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+      <div class="col-md-6 mb-3">
+        <%= text_field_tag :category, params[:category], class: 'form-control', placeholder: "Category", data: {autocomplete_source: pages_cat_search_path} %>
       </div>
-      <%= text_field_tag :date_end, params[:end], 'onkeydown' => 'return false', class: 'form-control datetimepicker-input', 'data-target' => '#datetimepicker_end', placeholder: 'To' %>
     </div>
-    <%= submit_tag 'Search', class: 'form-control', name: nil %>
-    <%= link_to  "Home", root_path %>
   </div>
+
+  <div class="form-row align-items-center">
+    <div class="col-md-6 mb-3">
+      <div class="input-group date" id="datetimepicker_start" data-target-input="nearest">
+        <div class="input-group-prepend" id="date_icon_start" data-target="#datetimepicker_start" data-toggle="datetimepicker">
+          <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+        </div>
+        <%= text_field_tag :date_start, params[:start], 'onkeydown' => 'return false', class: 'form-control datetimepicker-input', 'data-target' => '#datetimepicker_start', placeholder: 'From' %>
+      </div>
+    </div>
+    <div class="col-md-6 mb-3">
+      <div class="input-group date" id="datetimepicker_end" data-target-input="nearest">
+        <div class="input-group-prepend" id="date_icon_end" data-target="#datetimepicker_end" data-toggle="datetimepicker">
+          <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+        </div>
+        <%= text_field_tag :date_end, params[:end], 'onkeydown' => 'return false', class: 'form-control datetimepicker-input', 'data-target' => '#datetimepicker_end', placeholder: 'To' %>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="custom-control custom-checkbox">
+    <% check_box :sort_by_wage, {}, "true", "false" %>
+    <label class="custom-control-label" for="same-address">Sort by wage descending.</label>
+  </div>
+
+
+  <div class="form-row align-items-center">
+    <div class="col-md-6 mb-3">
+      <%= submit_tag 'Search', class: 'btn btn-primary btn-lg btn-block', name: nil %>
+    </div>
+    <div class="col-md-6 mb-3">
+      <%= link_to  "Home", root_path %>
+    </div>
+  </div>
+
 
 <% end %>
 <% if @offers.empty? %>
@@ -46,6 +68,7 @@
               <h5 class="card-title"><%= offer.label %></h5>
               <h6 class="card-subtitle mb-2 text-muted"><%= offer.cat_name %> - <%= offer.s_name %> <%= offer.c_name %></h6>
               <%= offer.date.strftime("%d-%m-%Y") %>
+              <h6><%= offer.wage %></h6>
               <p class="card-text"><%= offer.content.truncate(60) %></p>
             </div>
             <div class="col-sm-4">
