@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e91141e8-5574-4f73-998b-f91c76056250" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/db/migrate/20190622105644_add_wage_to_offer.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/offer.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/offer.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/offers/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/offers/new.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/offers/new.js.erb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/shared/_offer_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/shared/_offer_form.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -86,19 +81,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/shared/_offer_form.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="36" column="62" selection-start-line="36" selection-start-column="62" selection-end-line="36" selection-end-column="62" />
-              <folding>
-                <element signature="n#script#0;n#!!top" />
-              </folding>
+            <state relative-caret-position="52">
+              <caret line="2" column="52" selection-start-line="2" selection-start-column="52" selection-end-line="2" selection-end-column="52" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/offer.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="364">
@@ -236,8 +228,8 @@
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/app/views/offers/new.html.erb" />
         <option value="$PROJECT_DIR$/db/migrate/20190622105644_add_wage_to_offer.rb" />
-        <option value="$PROJECT_DIR$/app/views/shared/_offer_form.html.erb" />
         <option value="$PROJECT_DIR$/app/models/offer.rb" />
+        <option value="$PROJECT_DIR$/app/views/shared/_offer_form.html.erb" />
       </list>
     </option>
   </component>
@@ -515,7 +507,7 @@
       <workItem from="1557748859427" duration="2751000" />
       <workItem from="1557813459328" duration="1610000" />
       <workItem from="1560715932776" duration="6717000" />
-      <workItem from="1561020284622" duration="11685000" />
+      <workItem from="1561020284622" duration="13212000" />
     </task>
     <task id="LOCAL-00001" summary="Príprava na 3 odovzdanie">
       <created>1557242567400</created>
@@ -535,7 +527,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="270306000" />
+    <option name="totallyTimeSpent" value="271833000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -548,7 +540,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8528827" visible="true" weight="0.1663113" />
       <window_info id="Structure" order="1" sideWeight="0.1471173" side_tool="true" weight="0.22761194" />
@@ -563,8 +554,8 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" sideWeight="0.4989339" weight="0.3290461" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.3279743" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.65351814" visible="true" weight="0.07931404" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.3464819" side_tool="true" visible="true" weight="0.07931404" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.65351814" visible="true" weight="0.46730974" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.3464819" side_tool="true" visible="true" weight="0.46730974" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.3279743" />
       <window_info anchor="bottom" id="Database Console" order="13" sideWeight="0.4989339" weight="0.3279743" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -907,20 +898,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/shared/_offer_form.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="36" column="62" selection-start-line="36" selection-start-column="62" selection-end-line="36" selection-end-column="62" />
-          <folding>
-            <element signature="n#script#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/offer.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
           <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/shared/_offer_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" column="52" selection-start-line="2" selection-start-column="52" selection-end-line="2" selection-end-column="52" />
         </state>
       </provider>
     </entry>

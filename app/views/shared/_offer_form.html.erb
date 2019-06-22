@@ -1,6 +1,6 @@
 
 <div class="order-md-1">
-  <%= form_for(@offer, id: "offer_form") do |f| %>
+  <%= form_for(@offer, html: { autocomplete: "off" }) do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
 
     <div class="row">
