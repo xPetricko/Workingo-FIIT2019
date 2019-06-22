@@ -25,7 +25,9 @@
 
 states = CS.countries
 states.each do |i|
-  State.create(name: i[1], code: i[0])
+  if (i[0] == "SK" or i[0] == "CZ")
+    State.create(name: i[1], code: i[0])
+  end
 end
 states = State.all
 states.each do |i|
