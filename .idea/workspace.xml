@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e91141e8-5574-4f73-998b-f91c76056250" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/offers_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/offers_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/helpers/application_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/application_helper.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/offers/search.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/offers/search.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/offers/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/offers/show.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/offers/user_offers.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/offers/user_offers.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/seeds.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/seeds.rb" afterDir="false" />
     </list>
@@ -119,11 +114,11 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/offers/user_offers.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
-              <caret line="35" column="14" selection-start-line="35" selection-start-column="14" selection-end-line="35" selection-end-column="14" />
+            <state relative-caret-position="417">
+              <caret line="35" column="15" selection-start-line="35" selection-start-column="15" selection-end-line="35" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -155,11 +150,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db/seeds.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="35" column="1" lean-forward="true" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
+            <state relative-caret-position="312">
+              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
             </state>
           </provider>
         </entry>
@@ -243,10 +238,10 @@
         <option value="$PROJECT_DIR$/app/views/pages/_logged_in_home.html.erb" />
         <option value="$PROJECT_DIR$/app/helpers/application_helper.rb" />
         <option value="$PROJECT_DIR$/app/views/offers/search.html.erb" />
-        <option value="$PROJECT_DIR$/db/seeds.rb" />
-        <option value="$PROJECT_DIR$/app/views/offers/user_offers.html.erb" />
         <option value="$PROJECT_DIR$/app/views/offers/show.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/offers_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/offers/user_offers.html.erb" />
+        <option value="$PROJECT_DIR$/db/seeds.rb" />
       </list>
     </option>
   </component>
@@ -526,7 +521,7 @@
       <workItem from="1557813459328" duration="1610000" />
       <workItem from="1560715932776" duration="6717000" />
       <workItem from="1561020284622" duration="21487000" />
-      <workItem from="1561220971430" duration="15155000" />
+      <workItem from="1561220971430" duration="15167000" />
     </task>
     <task id="LOCAL-00001" summary="Príprava na 3 odovzdanie">
       <created>1557242567400</created>
@@ -553,7 +548,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="295263000" />
+    <option name="totallyTimeSpent" value="295275000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -860,13 +855,6 @@
     <entry file="file://$PROJECT_DIR$/app/views/pages/about.html.erb">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/seeds.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="35" column="1" lean-forward="true" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/offers/_offer.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="52">
@@ -914,8 +902,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/offers/user_offers.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="35" column="14" selection-start-line="35" selection-start-column="14" selection-end-line="35" selection-end-column="14" />
+        <state relative-caret-position="417">
+          <caret line="35" column="15" selection-start-line="35" selection-start-column="15" selection-end-line="35" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/seeds.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
         </state>
       </provider>
     </entry>

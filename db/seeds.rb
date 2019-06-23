@@ -27,7 +27,7 @@
 # states.each do |i|
 #     State.create(name: i[1], code: i[0])
 # end
-# states = State.all
+ states = State.all
 # states.each do |i|
 #   provinces = CS.states(i.code)
 #   provinces.each do |p|
