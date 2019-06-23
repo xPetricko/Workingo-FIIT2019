@@ -28,7 +28,17 @@ class OffersController < ApplicationController
   def disable()
     @offer = Offer.find(params[:offer])
     @offer.update(active: !@offer.active)
-    redirect_to root_path
+    if params[:page].present?
+      if params[:page] == "crt"
+        redirect_to @offer
+      end
+      if params[:page] == "list"
+        redirect_to offers_user_offers_path
+      end
+    else
+      redirect_to root_path
+    end
+
   end
 
   def edit

@@ -1,7 +1,4 @@
 <% provide(:title, @offer.label) %>
-
-
-
 <div class="card" >
   <div class="card-body">
     <div class="row">
@@ -23,15 +20,20 @@
         <p class="card-text"><%= @offer.content%></p>
         <h5>Aplies:</h5>
         <p class="card-text"><%= @offer.count %></p>
+        <h5>Wage:</h5>
+        <p class="card-text"><%= @offer.wage %></p>
       </div>
       <div class="col-sm-4">
         <% if logged_in? && current_user?(@offer.user) %>
-          <div class="row">
+          <div class="btn-group">
             <%= link_to "Edit offer", offers_edit_path(@offer), class: "btn btn-primary border-0 m-2 disabled", style: "background-color: #131c2d" %>
-          </div>
-          <div class="row">
             <%= link_to "delete",@offer, method: :delete, class: "btn btn-primary border-0 m-2", style: "background-color: #131c2d",
                         data: { confirm: "You sure?" } %>
+            <% if @offer.active == false %>
+              <%= link_to "Enable",offers_disable_path(offer: @offer, page: "crt"), class: "btn btn-primary border-0 m-2", style: "background-color: #131c2d" %>
+            <% else %>
+              <%= link_to "Disable",offers_disable_path(offer: @offer, page: "crt"), class: "btn btn-primary border-0 m-2", style: "background-color: #131c2d" %>
+            <% end %>
           </div>
           <h3>Applies for this offer:</h3>
           <% if @applies.present? %>
