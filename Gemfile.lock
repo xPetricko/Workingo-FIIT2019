@@ -93,8 +93,6 @@ GEM
     duktape (2.0.1.0)
     erubi (1.8.0)
     execjs (2.7.0)
-    faker (1.9.3)
-      i18n (>= 0.7)
     ffi (1.10.0-x64-mingw32)
     font-awesome-rails (4.7.0.5)
       railties (>= 3.2, < 6.1)
@@ -225,7 +223,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (= 3.1.12)
   bootsnap (>= 1.1.0)
-  bootstrap-sass (= 3.3.7)
+  bootstrap-sass
   bootstrap4-datetime-picker-rails
   byebug
   capybara (>= 2.15)
@@ -234,7 +232,6 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   countries
   duktape
-  faker
   font-awesome-rails
   jbuilder (~> 2.5)
   jquery-rails

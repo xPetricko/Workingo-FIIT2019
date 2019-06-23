@@ -25,6 +25,12 @@ class OffersController < ApplicationController
     @offers = Offer.all.paginate(page: params[:page], per_page: 5)
   end
 
+  def disable()
+    @offer = Offer.find(params[:offer])
+    @offer.update(active: !@offer.active)
+    redirect_to root_path
+  end
+
   def edit
     @offer = Offer.find(params[:format])
   end
@@ -37,30 +43,49 @@ class OffersController < ApplicationController
       params[:date_end] = Float::INFINITY
     end
     if params[:search].empty?
-      @offers = Offer.select("offers.*, categories.name as cat_name, states.name as s_name, cities.name as c_name")
-                    .joins("LEFT JOIN categories ON categories.id = offers.category_id")
-                    .joins("LEFT JOIN states ON states.id = offers.state_id")
-                    .joins("LEFT JOIN cities ON cities.id = offers.city_id")
-                    .where("date >= ? and date<= ?", params[:date_start], params[:date_end])
-                    .order(:date)
-                    .paginate(page: params[:page], per_page: 10)
+      if params[:sort].present?
+        @offers = Offer.select("offers.*, categories.name as cat_name, states.name as s_name, cities.name as c_name")
+                      .joins("LEFT JOIN categories ON categories.id = offers.category_id")
+                      .joins("LEFT JOIN states ON states.id = offers.state_id")
+                      .joins("LEFT JOIN cities ON cities.id = offers.city_id")
+                      .where("date >= ? and date<= ? and active = True", params[:date_start], params[:date_end])
+                      .paginate(page: params[:page], per_page: 10).order('wage DESC, date')
+      else
+        @offers = Offer.select("offers.*, categories.name as cat_name, states.name as s_name, cities.name as c_name")
+                      .joins("LEFT JOIN categories ON categories.id = offers.category_id")
+                      .joins("LEFT JOIN states ON states.id = offers.state_id")
+                      .joins("LEFT JOIN cities ON cities.id = offers.city_id")
+                      .where("date >= ? and date<= ? and active = True", params[:date_start], params[:date_end])
+                      .paginate(page: params[:page], per_page: 10).order('date')
+      end
+
     else
+      if params[:sort].present?
       @offers = Offer.select("offers.*, categories.name as cat_name, tab.*")
                     .joins("LEFT JOIN categories ON categories.id = offers.category_id")
                     .joins("INNER JOIN (SELECT states.id as s_id, states.name as s_name ,cities.name as c_name from states
                                          LEFT JOIN cities ON cities.state_id = states.id
                                          WHERE states.name = '#{params[:search]}' or cities.name = '#{params[:search]}') as tab
                             ON tab.s_id = offers.state_id")
-                    .where("date BETWEEN ? and ?", params[:date_start], params[:date_end])
-                    .order(:date)
-                    .paginate(page: params[:page], per_page: 10)
+                    .where("date BETWEEN ? and ? and active = True", params[:date_start], params[:date_end])
+                    .paginate(page: params[:page], per_page: 10).order('wage DESC, date')
+      else
+        @offers = Offer.select("offers.*, categories.name as cat_name, tab.*")
+                      .joins("LEFT JOIN categories ON categories.id = offers.category_id")
+                      .joins("INNER JOIN (SELECT states.id as s_id, states.name as s_name ,cities.name as c_name from states
+                                         LEFT JOIN cities ON cities.state_id = states.id
+                                         WHERE states.name = '#{params[:search]}' or cities.name = '#{params[:search]}') as tab
+                            ON tab.s_id = offers.state_id")
+                      .where("date BETWEEN ? and ? and active = True", params[:date_start], params[:date_end])
+                      .paginate(page: params[:page], per_page: 10).order('date')
+      end
     end
   end
 
 
   def create
     @offer = current_user.offers.build(offers_params)
-    @offer.category_name= (params[:offer][:category_name])
+    @offer.category_name = (params[:offer][:category_name])
     if @offer.save
       flash[:success] = "Offer created!"
       redirect_to root_url
@@ -113,7 +138,7 @@ class OffersController < ApplicationController
   private
 
   def offers_params
-    params.require(:offer).permit(:content, :label, :date, :state_id, :wage,   :province_id, :city_id)
+    params.require(:offer).permit(:content, :label, :date, :state_id, :wage,  :checkbox, :province_id, :city_id)
   end
 end
 

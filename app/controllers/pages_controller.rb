@@ -22,7 +22,7 @@ class PagesController < ApplicationController
 
   def home
     if logged_in?
-      #asd
+      @offers = current_user.offers.where(:active == true).limit(6)
     else
       @offers_count = Offer.all.count
       @states_count = Offer.select(:state_id).distinct.count
