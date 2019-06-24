@@ -59,7 +59,7 @@
     No results found.
   </div>
 <% else %>
-  <ul class="users">
+  <ul>
     Found <%= @offers.count.inspect %> result/s.
     <br>
     <%= will_paginate @offers%>
@@ -70,7 +70,7 @@
           <div class="row">
             <div class="col-sm-8">
               <h5 class="card-title"><%= offer.label %></h5>
-              <h6 class="card-subtitle mb-2 text-muted"><%= offer.cat_name %> - <%= offer.s_name %> <%= offer.c_name %></h6>
+              <h6 class="card-subtitle mb-2 text-muted"><%= offer.cat_name %> - <%= offer.state.name %> <%= offer.c_name %></h6>
               <%= offer.date.strftime("%d-%m-%Y") %>
               <h6><%= offer.wage %> €</h6>
               <p class="card-text"><%= offer.content.truncate(60) %></p>
@@ -86,9 +86,8 @@
           </div>
         </div>
       </div>
-
       <br>
-  <% end %>
+    <% end %>
   </ul>
 <% end %>
 

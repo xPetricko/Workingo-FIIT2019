@@ -82,7 +82,7 @@ class OffersController < ApplicationController
       else
         @offers = Offer.select("offers.*, categories.name as cat_name, tab.*")
                       .joins("LEFT JOIN categories ON categories.id = offers.category_id")
-                      .joins("INNER JOIN (SELECT states.id as s_id, states.name as s_name ,cities.name as c_name from states
+                      .joins("INNER JOIN (SELECT DISTINCT states.id as s_id, states.name as s_name ,cities.name as c_name from states
                                          LEFT JOIN cities ON cities.state_id = states.id
                                          WHERE states.name = '#{params[:search]}' or cities.name = '#{params[:search]}') as tab
                             ON tab.s_id = offers.state_id")
