@@ -1,11 +1,57 @@
 <% provide(:title, "About") %>
-<h1>About</h1>
-<p>
-  The <a href="https://www.railstutorial.org/"><em>Ruby on Rails
-  Tutorial</em></a> is a
-  <a href="https://www.railstutorial.org/book">book</a> and
-  <a href="http://screencasts.railstutorial.org/">screencast series</a>
-  to teach web development with
-  <a href="http://rubyonrails.org/">Ruby on Rails</a>.
-  This is the sample application for the tutorial.
-</p>
+
+<header class="bg-primary py-2 mt-3 mb-5 rounded" style="background-color: #131c2d !important;">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+      <div class="col-lg-12">
+        <h1 class="display-4 text-white mt-5 mb-2">Workingo</h1>
+        <p class="lead mb-1 text-white-50" style="color: #ffffff !important;">Workingo is the best short time job sharing app for every traveler.</p>
+        <p class="lead mb-5 text-white-50" style="color: #ffffff !important;">It´s simple and easy.</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-8 mb-5">
+      <h2>How it works?</h2>
+      <hr>
+      <h5>Want to find a job?</h5>
+      <p>If you travel somewhere and you want to earn some money there while you are there. Simply just type city, state,
+        or country where are you going, enter date when you will be there and press "Search".
+        System will find you results for you specified requirements. You can also search by category. Then wind your job and apply for it.
+        Job owner will be informed about your apply and he can contact you by your email. Wanna try that?</p>
+      <%= link_to "Search offers", offers_search_path(search: "", date_start: "", date_end: ""), {class: "btn btn-outline-info mb-4", style: "border-color: #131c2d"}  %>
+      <h5>Want to post a job offer?</h5>
+      <p>If you want to post a job you have to sign up. After that you can in your main menu click on button to
+        create new offer. Then you enter required informations. If you have problem that category of your job isn´t
+        speccified in list?... Don´t worry just enter it and your new category will be created. After creating job you can
+      display it and see who applied for it. If you find someone who wants your job you can disable it so no new applies will come.
+      If your job offer is not actual you can simply delete it from system. You have job to share? Come and find someone for it!</p>
+      <div class="btn-group">
+        <%= link_to "Log in", login_path,class: "btn btn-outline-info", style: "border-color: #131c2d" %>
+        <%= link_to " or ", "#", class: "btn btn-outline-info disabled", style: "border-color: #131c2d"%>
+        <%= link_to "Sign up now!", signup_path, class: "btn btn-outline-info", style: "border-color: #131c2d"%>
+      </div>
+    </div>
+    <div class="col-md-4 mb-5">
+      <h2>Contact Us</h2>
+      <hr>
+      <address>
+        <strong>Workingo</strong>
+        <br>Východná 3,
+        <br>03601 Martin,
+        <br>Slovakia
+        <br>
+      </address>
+      <address>
+        <h6>Phone:</h6>
+        (421) 910 301 354
+        <h6 class="mt-2">Email:</h6>
+        <a href="mailto:#">petricko.andrej@gmail.com</a>
+      </address>
+    </div>
+  </div>
+</div>

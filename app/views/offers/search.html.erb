@@ -1,5 +1,5 @@
 <% provide(:title, 'Search job') %>
-<%= form_tag(offers_search_path,class: 'form-group', method: :get) do %>
+<%= form_tag(offers_search_path,class: 'form-group', method: :get, autocomplete: "off") do %>
 
     <div class="mt-3 form-row align-items-center">
       <div class="col-md-6 mb-3">
@@ -39,15 +39,13 @@
   <div class="mb-3 custom-control custom-checkbox">
 
     <%=check_box_tag 'sort',value = 1, checked = false, options= {class: 'custom-control-input'} %>
-
     <label class="custom-control-label" for="sort">Sort jobs by wage descending.</label>
-    <%= @b.inspect %>
   </div>
 
 
   <div class="form-row align-items-center">
     <div class="col-md-6 mb-3">
-      <%= submit_tag 'Search', class: 'btn btn-primary btn-lg btn-block', name: nil %>
+      <%= submit_tag 'Search', class: 'form-control btn', name: nil %>
     </div>
     <div class="col-md-6 mb-3">
       <%= link_to  "Home", root_path %>

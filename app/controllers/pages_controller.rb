@@ -22,11 +22,11 @@ class PagesController < ApplicationController
 
   def home
     if logged_in?
-      @offers = current_user.offers.where(:active == true).limit(6)
+      @offers = current_user.offers.limit(6)
     else
-      @offers_count = Offer.all.count
-      @states_count = Offer.select(:state_id).distinct.count
-      @cities_count = Offer.select(:city_id).distinct.count
+      @offers_count = Offer.where(:active => true).count
+      @states_count = Offer.where(:active => true).select(:state_id).distinct.count
+      @cities_count = Offer.where(:active => true).select(:city_id).distinct.count
       @week_count =  Offer.where(created_at: Time.zone.now.beginning_of_day.ago(7.days)..Time.zone.now).count
     end
   end

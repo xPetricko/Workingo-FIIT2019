@@ -48,15 +48,15 @@
     <div class="form-row align-items-center">
       <div class="col-auto my-1">
         <label class="mr-sm-2" >Country</label>
-        <%= f.select :state_id, options_for_select(@states.map{ |c| [c.name, c.id] }), {}, { :class => 'custom-select mr-sm-2' }  %>
+        <%= f.select :state_id, options_for_select(@states.map{ |c| [c.name, c.id] }), {:prompt => "Select Country"}, {:class => 'custom-select mr-sm-2' }  %>
       </div>
       <div class="col-auto my-1">
         <label class="mr-sm-2" >State/Region</label>
-        <%= f.collection_select :province_id, @provinces, :id, :name,{}, {class: 'custom-select mr-sm-2'} %>
+        <%= f.collection_select :province_id, @provinces, :id, :name,{:prompt => "Select State/Region"}, {class: 'custom-select mr-sm-2'} %>
       </div>
       <div class="col-auto my-1">
         <label class="mr-sm-2" >City</label>
-        <%= f.collection_select :city_id, @cities, :id, :name, {}, {class: 'custom-select mr-sm-2'}%>
+        <%= f.collection_select :city_id, @cities, :id, :name, {:prompt => "Select City"}, {class: 'custom-select mr-sm-2'}%>
       </div>
     </div>
 
