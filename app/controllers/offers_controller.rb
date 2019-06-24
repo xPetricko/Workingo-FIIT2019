@@ -52,44 +52,23 @@ class OffersController < ApplicationController
     if params[:date_end].empty?
       params[:date_end] = Float::INFINITY
     end
-    if params[:search].empty?
+
       if params[:sort].present?
         @offers = Offer.select("offers.*, categories.name as cat_name, states.name as s_name, cities.name as c_name")
                       .joins("LEFT JOIN categories ON categories.id = offers.category_id")
                       .joins("LEFT JOIN states ON states.id = offers.state_id")
                       .joins("LEFT JOIN cities ON cities.id = offers.city_id")
-                      .where("date >= ? and date<= ? and active = True and categories.name LIKE ?", params[:date_start], params[:date_end],"%#{params[:category]}%")
+                      .where("date >= ? and date<= ? and active = True and categories.name LIKE ? and (cities.name LIKE ? or states.name LIKE ?", params[:date_start], params[:date_end],"%#{params[:category]}%","%#{params[:search]}%","%#{params[:search]}%")
                       .paginate(page: params[:page], per_page: 10).order('wage DESC, date')
       else
         @offers = Offer.select("offers.*, categories.name as cat_name, states.name as s_name, cities.name as c_name")
                       .joins("LEFT JOIN categories ON categories.id = offers.category_id")
                       .joins("LEFT JOIN states ON states.id = offers.state_id")
                       .joins("LEFT JOIN cities ON cities.id = offers.city_id")
-                      .where("date >= ? and date<= ? and active = True and categories.name LIKE ?", params[:date_start], params[:date_end], "%#{params[:category]}%")
+                      .where("date >= ? and date<= ? and active = True and categories.name LIKE ? and (cities.name LIKE ? or states.name LIKE ?)", params[:date_start], params[:date_end], "%#{params[:category]}%","%#{params[:search]}%","%#{params[:search]}%")
                       .paginate(page: params[:page], per_page: 10).order('date')
       end
-
-    else
-      if params[:sort].present?
-      @offers = Offer.select("offers.*, categories.name as cat_name, tab.*")
-                    .joins("LEFT JOIN categories ON categories.id = offers.category_id")
-                    .joins("INNER JOIN (SELECT DISTINCT states.id as s_id, states.name as s_name ,cities.name as c_name from cities
-                                         LEFT JOIN states ON states.id = cities.state_id
-                                         WHERE states.name = '#{params[:search]}' or cities.name = '#{params[:search]}') as tab
-                            ON tab.s_id = offers.state_id")
-                    .where("date BETWEEN ? and ? and active = True and categories.name LIKE ?", params[:date_start], params[:date_end], "%#{params[:category]}%")
-                    .paginate(page: params[:page], per_page: 10).order('wage DESC, date')
-      else
-        @offers = Offer.select("offers.*, categories.name as cat_name, tab.*")
-                      .joins("LEFT JOIN categories ON categories.id = offers.category_id")
-                      .joins("INNER JOIN (SELECT DISTINCT states.id as s_id, states.name as s_name ,cities.name as c_name from cities
-                                         LEFT JOIN states ON states.id = cities.state_id
-                                         WHERE states.name = '#{params[:search]}' or cities.name = '#{params[:search]}') as tab
-                            ON tab.s_id = offers.state_id")
-                      .where("date BETWEEN ? and ? and active = True and categories.name LIKE ?", params[:date_start], params[:date_end], "%#{params[:category]}%")
-                      .paginate(page: params[:page], per_page: 10).order('date')
-      end
-    end
+    
   end
 
 
